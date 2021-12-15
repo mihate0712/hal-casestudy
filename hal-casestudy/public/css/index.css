@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+* {
+    margin: 0 auto;
+}
+header {
+    height: 100px;
+}
+img {
+    width: 100%;
+    height: 70%;
+}
+h2 {
+    color: #F00;
+    margin-top: 50px;
+    margin-left: 20px;
+    height: 100px;
+}
+.flex {
+    display: flex;
+    background-color: aqua;
+    padding-left: 100px;
+}
+.content img {
+    width: 80%;
+    padding-top: 20px;
+}
+.content2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: aqua;
+}
+#ork {
+    width: 50%;
+    height: 50%;
+    padding-top: 20px;
+}
