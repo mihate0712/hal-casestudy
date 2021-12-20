@@ -18,7 +18,7 @@ h2 {
 }
 .flex {
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
     padding-left: 100px;
 }
 .content img {
@@ -28,7 +28,7 @@ h2 {
 .content2 {
     margin: 0 auto;
     text-align: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 #ork {
     width: 50%;

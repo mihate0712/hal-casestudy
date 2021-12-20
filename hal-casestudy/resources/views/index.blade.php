@@ -13,20 +13,28 @@
     <h2>あなたにオススメ</h2>
     <div class="flex">
         <div class="content">
-            <img src="{{ asset('images/sub.jpg')}}">
-            <p>おすすめだよ</p>
+            <a href="/">
+                <img src="{{ asset('images/sub.jpg')}}">
+                <p>おすすめだよ</p>
+            </a>
         </div>
         <div class="content">
-            <img src="{{ asset('images/sub.jpg')}}">
-            <p>おすすめだ</p>
+            <a href="/">
+                <img src="{{ asset('images/sub.jpg')}}">
+                <p>おすすめだ</p>
+            </a>
         </div>
         <div class="content">
-            <img src="{{ asset('images/sub.jpg')}}">
-            <p>おすすめだね</p>
+            <a href="/">
+                <img src="{{ asset('images/sub.jpg')}}">
+                <p>おすすめだね</p>
+            </a>
         </div>
         <div class="content">
-            <img src="{{ asset('images/sub.jpg')}}">
-            <p>おすすめ</p>
+            <a href="/">
+                <img src="{{ asset('images/sub.jpg')}}">
+                <p>おすすめ</p>
+            </a>
         </div>
     </div>
     <h2>人気車両ランキング</h2>
