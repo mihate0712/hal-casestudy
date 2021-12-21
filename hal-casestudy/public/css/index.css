@@ -5,6 +5,26 @@
 }
 header {
     height: 100px;
+    background-color: aqua;
+}
+nav {
+    padding-left: 100px;
+}
+#search {
+    margin: 10px;
+    width: 60%;
+    float: left;
+    /* background-color: aqua; */
+}
+#submit {
+    margin: 8px;
+    float: left;
+    /* background-color: aqua; */
+}
+#syousai {
+    margin: 10px;
+    padding-left: 200px;
+    float: left;
 }
 img {
     width: 100%;
@@ -18,7 +38,7 @@ h2 {
 }
 .flex {
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
     padding-left: 100px;
 }
 .content img {
@@ -28,10 +48,15 @@ h2 {
 .content2 {
     margin: 0 auto;
     text-align: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 #ork {
     width: 50%;
     height: 50%;
     padding-top: 20px;
+}
+footer {
+    margin-top: 100px;
+    height: 100px;
+    background-color: aqua;
 }
