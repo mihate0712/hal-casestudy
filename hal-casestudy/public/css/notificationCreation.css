@@ -132,6 +132,30 @@ label{
     width: 100%;
     height: 200px;
 }
+.back{
+    margin: 10px auto;
+    background: rgb(66, 66, 66);
+    color: rgb(0,0,0);
+    padding: 10px 350px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.searchMore{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 10px auto;
+    background: rgb(124, 255, 135);
+    color: rgb(0,0,0);
+    padding: 10px 350px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
 
 /*フッター*/
 footer{

@@ -46,7 +46,8 @@
                         <textarea class="notificationAboutTextarea"></textarea>
                     </div>
                     <div class="button">
-                        
+                        <a href="#" class="back">内容を取り消して戻る</a>
+                        <input type="button" class="searchMore" name="send" value="この内容で通知を送信">
                     </div>
                 </form>
             </div>
