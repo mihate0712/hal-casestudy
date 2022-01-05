@@ -1,0 +1,154 @@
+/*ヘッダー*/
+header{
+    height: 100px;
+    background-color: rgb(68, 68, 68);
+}
+
+/*表示部全体*/
+.displayArea{
+    width: 100%;
+    padding: 25px 0;
+}
+
+/*ページタイトル*/
+.pageTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    color: rgb(70, 70, 70);
+}
+
+/*車両画像*/
+.carImages{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.carImageMain{
+    width: 70%;
+    margin: auto;
+}
+.carImageFirst{
+    width: 100%;
+    height: auto;
+}
+.carImageSub{
+    width: 30%;
+    margin: auto;
+}
+.carImageSecond{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(70, 70, 70);
+}
+.carImageThird{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(70, 70, 70);
+}
+
+/*車両詳細情報*/
+.details{
+    padding: 50px 0 0;
+}
+.carName{
+    text-align: center;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(70, 70, 70);
+}
+.carDetail{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+table,th,td{
+    border-collapse: collapse;
+    border: 1px solid rgb(70, 70, 70);
+}
+.th{
+    font-size: 18px;
+    font-weight: lighter;
+    text-align: center;
+    background-color: rgb(200, 200, 200);
+    padding: 5px 0;
+}
+
+/*遷移ボタン*/
+.buttons{
+    padding-top: 50px;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.searchAlike{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 750px;
+    margin: 10px auto;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.goToAuction{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 750px;
+    margin: 10px auto;
+    background: rgb(124, 255, 183);
+    color: rgb(0,0,0);
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.Favorite{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 750px;
+    margin: 10px auto;
+    background: rgb(255, 124, 174);
+    color: rgb(0,0,0);
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.back{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 750px;
+    margin: 10px auto;
+    background: rgb(100, 100, 100);
+    color: rgb(0,0,0);
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/*フッター*/
+footer{
+    height: 100px;
+    background-color: rgb(68, 68, 68);
+}
