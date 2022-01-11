@@ -32,7 +32,7 @@
           <input type="submit" value="ログイン">
         </form>
       </fieldset>
-
+      <p><a href="/login.html">新規登録はこちら</a></p>
     </div>
   </body>
 
