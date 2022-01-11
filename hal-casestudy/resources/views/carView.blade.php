@@ -21,41 +21,41 @@
             <div class="carViewAll">
                 <div class="carViewArea">
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                        <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
-                    </div>
-                </div>
-                <div class="carViewArea">
-                    <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
-                    </div>
-                    <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                    <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                 </div>
                 <div class="carViewArea">
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                    <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                    <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                 </div>
                 <div class="carViewArea">
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                    <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                     <div class="carBox">
-                        <img src="./test.jpg" class="carImage">
+                    <img src="./images/test.jpg" class="carImage">
+                        <p class="carName">DAIHATSU CAST</p>
+                    </div>
+                </div>
+                <div class="carViewArea">
+                    <div class="carBox">
+                    <img src="./images/test.jpg" class="carImage">
+                        <p class="carName">DAIHATSU CAST</p>
+                    </div>
+                    <div class="carBox">
+                    <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU CAST</p>
                     </div>
                 </div>
