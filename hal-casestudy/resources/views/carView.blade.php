@@ -15,6 +15,7 @@
             <div class="search">
                 <form>
                     <input type="text" class="searchText" name="search" value="" placeholder="キーワードを入力して検索">
+                    <input type="button" class="searchKeyword" name="searchKeyword" value="上記キーワードで検索">
                     <input type="button" class="searchMore" name="searchMore" value="その他の検索条件を指定する">
                 </form>
             </div>
@@ -26,37 +27,37 @@
                     </div>
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <p class="carName">DAIHATSU TANTO</p>
                     </div>
                 </div>
                 <div class="carViewArea">
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <p class="carName">TOYOTA AQUA</p>
                     </div>
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
-                    </div>
-                </div>
-                <div class="carViewArea">
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
-                    </div>
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <p class="carName">TOYOTA PRIUS</p>
                     </div>
                 </div>
                 <div class="carViewArea">
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <p class="carName">SUBARU FORESTAR</p>
                     </div>
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <p class="carName">SUBARU REGACY</p>
+                    </div>
+                </div>
+                <div class="carViewArea">
+                    <div class="carBox">
+                    <img src="./images/test.jpg" class="carImage">
+                        <p class="carName">SUZUKI HASLAR</p>
+                    </div>
+                    <div class="carBox">
+                    <img src="./images/test.jpg" class="carImage">
+                        <p class="carName">SUZUKI MOMOKURO</p>
                     </div>
                 </div>
             </div>
