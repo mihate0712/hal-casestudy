@@ -64,4 +64,25 @@ class VehicleDAO {
         }
         return  $vehicleId;
     }
+
+    /**
+     * 全車両検索
+     */
+    public function findAll(): array{
+        $sql = "SELECT * FROM vehicles ORDER BY id";
+        $stmt = $this->db->prepare($sql);
+        $result = $stmt->execute();
+        $carList = [];
+        while($row = $stmt->fetch()){
+            $id = $row["id"];
+            $vehicleName = $row["vehicle_name"];
+            $imagePass = $row["image_pass"];
+            $vehicle = new Vehicle();
+            $vehicle->setId($id);
+            $vehicle->setVehicleName($vehicleName);
+            $vehicle->setImagePass($imagePass);
+            $carList[$id] = $vehicle;
+        }
+        return $carList;
+    }
 }

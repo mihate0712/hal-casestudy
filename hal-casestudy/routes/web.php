@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/vehicle_register", [VehicleController::class, "go_vehicle_register"]);
+Route::post("/vehicle_register", [VehicleController::class, "vehicle_register"]);
+Route::get("/conp", [VehicleController::class, "go_conp"]);
+
+Route::get("/carView", [VehicleController::class, "carView"]);

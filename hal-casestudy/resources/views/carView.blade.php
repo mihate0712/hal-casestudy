@@ -21,43 +21,15 @@
             </div>
             <div class="carViewAll">
                 <div class="carViewArea">
+                    @forelse($carList as $id => $vehicle)
                     <div class="carBox">
-                        <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU CAST</p>
+                        <img src="./images/{{$vehicle->getImagePass}}.jpg" class="carImage">
+                        <p class="carName">{{$vehicle->getVehicleName()}}</p>
                     </div>
+                    @endforelse
                     <div class="carBox">
                     <img src="./images/test.jpg" class="carImage">
                         <p class="carName">DAIHATSU TANTO</p>
-                    </div>
-                </div>
-                <div class="carViewArea">
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">TOYOTA AQUA</p>
-                    </div>
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">TOYOTA PRIUS</p>
-                    </div>
-                </div>
-                <div class="carViewArea">
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">SUBARU FORESTAR</p>
-                    </div>
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">SUBARU REGACY</p>
-                    </div>
-                </div>
-                <div class="carViewArea">
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">SUZUKI HASLAR</p>
-                    </div>
-                    <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">SUZUKI MOMOKURO</p>
                     </div>
                 </div>
             </div>
