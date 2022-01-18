@@ -16,10 +16,6 @@
                 <div class="carImageMain">
                     <img src="./test.jpg" class="carImageFirst">
                 </div>
-                <div class="carImageSub">
-                    <img src="./test.jpg" class="carImageSecond">
-                    <img src="./test.jpg" class="carImageThird">
-                </div>
             </div>
             <div class="details">
                 <h2 class="carName">車両名：DAIHATSU WAKE</h2>
