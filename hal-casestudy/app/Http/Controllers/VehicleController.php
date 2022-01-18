@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Functions;
 use App\Entity\Vehicle;
 use App\DAO\VehicleDAO;
 use App\Http\Controllers\Controller;
