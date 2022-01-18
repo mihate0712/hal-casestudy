@@ -90,9 +90,9 @@ class VehicleDAO {
      * 車種名で検索
      */
     public function findByName(string $vehicleName): array{
-        $sql = "SELECT * FROM vehicles  WHERE vehicle_name = :vehicle_name ORDER BY id";
+        $sql = "SELECT * FROM vehicles  WHERE vehicle_name LIKE :vehicle_name ORDER BY id";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindValue(":vehicle_name", $vehicleName, PDO::PARAM_STR);
+        $stmt->bindValue(":vehicle_name", "%".$vehicleName."%", PDO::PARAM_STR);
         $result = $stmt->execute();
         $carList = [];
         if(!$result){
