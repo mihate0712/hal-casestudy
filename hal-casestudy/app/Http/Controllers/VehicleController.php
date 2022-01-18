@@ -14,9 +14,11 @@ class VehicleController extends Controller {
     public function go_vehicle_register(Request $request) {
         $templatePath = "vehicle_register";
         $db = DB::connection()->getPdo();
+
         $assign = [];
         $assign["vehicle"] = new Vehicle();
         $assign["db"] = $db;
+
         return view($templatePath, $assign);
     }
     /**
@@ -79,10 +81,80 @@ class VehicleController extends Controller {
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
 
+        // 選択肢を変換
+        if($warranty_document == 0) {
+            $warranty_document = "あり";
+        }
+        else {
+            $warranty_document = "なし";
+        }
+
+        if($manual == 0) {
+            $manual = "あり";
+        }
+        else {
+            $manual = "なし";
+        }
+
+        if($fuel == 0) {
+            $fuel = "ガソリン";
+        }
+        if($fuel == 1) {
+            $fuel = "ハイオク";
+        }
+        else {
+            $fuel = "軽油";
+        }
+
+        if($car_type_id == 0) {
+            $car_type_id = "AT";
+        }
+        else {
+            $car_type_id = "MT";
+        }
+
+        if($air_conditioning == 0) {
+            $air_conditioning = "AC";
+        }
+        if($air_conditioning == 1) {
+            $air_conditioning = "AAC";
+        }
+        if($air_conditioning == 2) {
+            $air_conditioning = "WAC";
+        }
+        else {
+            $air_conditioning = "無";
+        }
+
+        if($shift_lever == 0) {
+            $shift_lever = "フロア";
+        }
+        if($shift_lever == 1) {
+            $shift_lever = "コラム";
+        }
+        else {
+            $shift_lever = "インパネ";
+        }
+
+        if($inspection == 0) {
+            $inspection = "はい";
+        }
+        else {
+            $inspection = "いいえ";
+        }
+
+        if($auction_join == 0) {
+            $auction_join = "あり";
+        }
+        else {
+            $auction_join = "なし";
+        }
+
         $assign["vehicle"] = $vehicle;
         $assign["vehicle_name"] = $vehicle_name;
         $assign["buying_price"] = $buying_price;
         $assign["model_year"] = $model_year;
+        $assign["mileage"] = $mileage;
         $assign["engine_displacement"] = $engine_displacement;
         $assign["inspection_date"] = $inspection_date;
         $assign["exterior_color"] = $exterior_color;
@@ -103,7 +175,9 @@ class VehicleController extends Controller {
         $assign["remarks"] = $remarks;
         $assign["auction_join"] = $auction_join;
 
-        $vehicleDAO->insert($vehicle);
+        $id = $vehicleDAO->insert($vehicle);
+
+        $assign["id"] = $id;
 
         $response = view($templatePath, $assign);
 
@@ -116,4 +190,9 @@ class VehicleController extends Controller {
 
         return $response;
     }
+
+    /**
+     * オプション登録処理。
+     */
+    
 }

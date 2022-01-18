@@ -14,10 +14,6 @@
         @csrf
             <table class="contact-table">
                 <tr>
-                    <th class="contact-item">車両番号</th>
-                    <td class="contact-body">{{$db->lastInsertId()}}</td>
-                </tr>
-                <tr>
                     <th class="contact-item">車両名</th>
                     <td class="contact-body">
                         <input type="text" name="vehicle_name" id="vehicle_name" value="{{$vehicle->getVehicleName()}}" required>
@@ -101,7 +97,7 @@
                     <td class="contact-body">
                         <label class="contact-manual">
                             <input type="radio" name="manual" value="0" checked />
-                            <span class="contact-manualt-txt">あり</span>
+                            <span class="contact-manual-txt">あり</span>
                         </label>
                         <label class="contact-manual">
                             <input type="radio" name="manual" value="1"/>
