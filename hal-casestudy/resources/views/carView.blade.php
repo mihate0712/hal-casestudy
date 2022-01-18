@@ -23,14 +23,14 @@
                 <div class="carViewArea">
                     @forelse($carList as $id => $vehicle)
                     <div class="carBox">
-                        <img src="./images/{{$vehicle->getImagePass}}.jpg" class="carImage">
+                        <img src="./images/{{$vehicle->getImagePass()}}.jpg" class="carImage">
                         <p class="carName">{{$vehicle->getVehicleName()}}</p>
                     </div>
-                    @endforelse
+                    @empty
                     <div class="carBox">
-                    <img src="./images/test.jpg" class="carImage">
-                        <p class="carName">DAIHATSU TANTO</p>
+                        <p class="empty">検索結果が見つかりません。</p>
                     </div>
+                    @endforelse
                 </div>
             </div>
             <div class="pager">
