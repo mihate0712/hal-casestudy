@@ -22,4 +22,19 @@ class VehicleController extends Controller{
         $assign["carList"] = $carList;
         return view($templatePath, $assign);
     }
+    /**
+     * 車両一覧画面：車種名検索
+     */
+    public function carViewSearch(Request $request){
+        $templatePath = "carView";
+        $assign = [];
+        $db = DB::connection()->getPdo();
+        $searchWord = $request->input("search");
+        $vehicle = new Vehicle();
+        $vehicle->setVehicleName($searchWord);
+        $vehicleDAO = new VehicleDAO($db);
+        $carList = $vehicleDAO->findByName($vehicle->getVehicleName());
+        $assign["carList"] = $carList;
+        return view($templatePath, $assign);
+    }
 }

@@ -85,4 +85,30 @@ class VehicleDAO {
         }
         return $carList;
     }
+
+    /**
+     * 車種名で検索
+     */
+    public function findByName(string $vehicleName): array{
+        $sql = "SELECT * FROM vehicles  WHERE vehicle_name = :vehicle_name ORDER BY id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":vehicle_name", $vehicleName, PDO::PARAM_STR);
+        $result = $stmt->execute();
+        $carList = [];
+        if(!$result){
+            $carList = [];
+        }else{
+            while($row = $stmt->fetch()){
+                $id = $row["id"];
+                $vehicleName = $row["vehicle_name"];
+                $imagePass = $row["image_pass"];
+                $vehicle = new Vehicle();
+                $vehicle->setId($id);
+                $vehicle->setVehicleName($vehicleName);
+                $vehicle->setImagePass($imagePass);
+                $carList[$id] = $vehicle;
+            }
+        }
+        return $carList;
+    }
 }

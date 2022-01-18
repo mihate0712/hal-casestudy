@@ -76,7 +76,6 @@ header{
     margin-top: 50px;
 }
 .carViewArea{
-    display: flex;
     text-align: center;
     width: 80%;
     margin: 0px auto;
@@ -84,22 +83,53 @@ header{
 
 /*車両ごと*/
 .carBox{
+    display: flex;
     width: 100%;
-    margin: 20px;
+    margin: 20px auto;
     border: 5px solid rgb(0,0,0);
     background-color: rgba(180, 253, 255, 0.3);
 }
 .carImage{
-    width: 90%;
+    width: 50%;
     height: auto;
     padding: 10px;
-    border-bottom: 2.5px solid rgb(0,0,0);
+    border-right: 2.5px solid rgb(0,0,0);
+}
+.nameArea{
+    width: 50%;
+    padding: 10px;
 }
 .carName{
-    font-size: 15px;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 30px;
     font-weight: lighter;
     font-style: italic;
 }
+.searchMoreLink{
+    margin: 20px auto;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    width: 850px;
+    padding: 10px 100px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/*検索結果ゼロ件*/
+.empty{
+    font-size: 25px;
+    color: rgb(255, 0, 0);
+}
+.carBoxEmpty{
+    width: 100%;
+    margin: 20px;
+    border: 5px solid rgb(0,0,0);
+    background-color: rgba(255, 71, 71, 0.4);
+}
+
 
 /*ページャ*/
 .pager{

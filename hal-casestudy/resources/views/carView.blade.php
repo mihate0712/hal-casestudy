@@ -13,10 +13,10 @@
         <div class="displayArea">
             <h1 class="pageTitle">登録車両一覧</h1>
             <div class="search">
-                <form>
-                    <input type="text" class="searchText" name="search" value="" placeholder="キーワードを入力して検索">
-                    <input type="button" class="searchKeyword" name="searchKeyword" value="上記キーワードで検索">
-                    <input type="button" class="searchMore" name="searchMore" value="その他の検索条件を指定する">
+                <form action="/carViewSearch" method="get">
+                    <input type="text" class="searchText" name="search" id="search" value="" placeholder="車種名を入力して検索">
+                    <button type="submit" class="searchKeyword">上記キーワードで検索</button>
+                    <!-- <input type="button" class="searchMore" name="searchMore" value="その他の検索条件を指定する"> -->
                 </form>
             </div>
             <div class="carViewAll">
@@ -24,23 +24,17 @@
                     @forelse($carList as $id => $vehicle)
                     <div class="carBox">
                         <img src="./images/{{$vehicle->getImagePass()}}.jpg" class="carImage">
-                        <p class="carName">{{$vehicle->getVehicleName()}}</p>
+                        <div class="nameArea">
+                            <p class="carName">{{$vehicle->getVehicleName()}}</p>
+                            <a href="#" class="searchMoreLink">この車の詳細情報を見る</a>
+                        </div>
                     </div>
                     @empty
-                    <div class="carBox">
+                    <div class="carBoxEmpty">
                         <p class="empty">検索結果が見つかりません。</p>
                     </div>
                     @endforelse
                 </div>
-            </div>
-            <div class="pager">
-                <a href="#" class="pagerBack">前へ</a>
-                <a href="#" class="pagerNumber">1</a>
-                <a href="#" class="pagerNumber">2</a>
-                <a href="#" class="pagerNumber">3</a>
-                <a href="#" class="pagerNumber">4</a>
-                <a href="#" class="pagerNumber">5</a>
-                <a href="#" class="pagerNext">次へ</a>
             </div>
         </div>
         <footer>

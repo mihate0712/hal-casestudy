@@ -23,3 +23,4 @@ Route::post("/vehicle_register", [VehicleController::class, "vehicle_register"])
 Route::get("/conp", [VehicleController::class, "go_conp"]);
 
 Route::get("/carView", [VehicleController::class, "carView"]);
+Route::get("/carViewSearch", [VehicleController::class, "carViewSearch"]);
