@@ -27,6 +27,11 @@
                         <div class="nameArea">
                             <p class="carName">{{$vehicle->getVehicleName()}}</p>
                             <a href="#" class="searchMoreLink">この車の詳細情報を見る</a>
+                            <p>aaa</p>
+                            <p>aaa</p>
+                            <p>aaa</p>
+                            <p>aaa</p>
+                            <p>aaa</p>
                         </div>
                     </div>
                     @empty
