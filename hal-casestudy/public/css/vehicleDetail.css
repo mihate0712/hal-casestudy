@@ -90,13 +90,14 @@ table,th,td{
     -moz-appearance: none;
     appearance: none;
     width: 750px;
-    margin: 10px auto;
+    margin: 10px 20px;
     background: rgb(124, 213, 255);
     color: rgb(0,0,0);
-    padding: 10px 0;
+    padding: 10px 100px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
+    line-height: 75px;
 }
 .goToAuction{
     background: none;
@@ -106,13 +107,14 @@ table,th,td{
     -moz-appearance: none;
     appearance: none;
     width: 750px;
-    margin: 10px auto;
+    margin: 10px 20px;
     background: rgb(124, 255, 183);
     color: rgb(0,0,0);
-    padding: 10px 0;
+    padding: 10px 80px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
+    line-height: 75px;
 }
 .Favorite{
     background: none;
@@ -122,13 +124,14 @@ table,th,td{
     -moz-appearance: none;
     appearance: none;
     width: 750px;
-    margin: 10px auto;
+    margin: 10px 20px;
     background: rgb(255, 124, 174);
     color: rgb(0,0,0);
-    padding: 10px 0;
+    padding: 10px 100px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
+    line-height: 75px;
 }
 .back{
     background: none;
@@ -138,13 +141,14 @@ table,th,td{
     -moz-appearance: none;
     appearance: none;
     width: 750px;
-    margin: 10px auto;
+    margin: 10px 20px;
     background: rgb(100, 100, 100);
     color: rgb(0,0,0);
-    padding: 10px 0;
+    padding: 10px 110px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
+    line-height: 75px;
 }
 
 /*フッター*/
