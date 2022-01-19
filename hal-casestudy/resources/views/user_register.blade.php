@@ -26,38 +26,38 @@
       <tr>
         <th class="contact-item">アカウント名</th>
         <td class="contact-body">
-          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" required>
+          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" value="{{ohs@12345}}" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">ニックネーム</th>
         <td class="contact-body">
-          <input type="text" name="screen_name" class="form-text" placeholder="例）テカる" required>
+          <input type="text" name="screen_name" class="form-text" placeholder="例）テカる" value="中野" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">名前</th>
         <td class="contact-body">
-          <input type="text" name="first_name" class="form-text" placeholder="例）中野" required>
-          <input type="text" name="last_name" class="form-text" placeholder="例）輝" required>
+          <input type="text" name="first_name" class="form-text" placeholder="例）中野" value="中野" required>
+          <input type="text" name="last_name" class="form-text" placeholder="例）輝" value="輝" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">名前（フリガナ）</th>
         <td class="contact-body">
-          <input type="text" name="first_name_kana" class="form-text" placeholder="例）ナカノ" required>
-          <input type="text" name="last_name_kana" class="form-text" placeholder="例）ヒカル" required>
+          <input type="text" name="first_name_kana" class="form-text" placeholder="例）ナカノ" value="ナカノ" required>
+          <input type="text" name="last_name_kana" class="form-text" placeholder="例）ヒカル" value="ヒカル" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">性別</th>
         <td class="contact-body">
           <label class="contact-sex">
-            <input type="radio" name="gender" required>
+            <input type="radio" name="gender" value="male" required>
             <span class="contact-sex-txt">男</span>
           </label>
           <label class="contact-sex">
-            <input type="radio" name="gender" required>
+            <input type="radio" name="gender" value="female" required>
             <span class="contact-sex-txt">女</span>
           </label>
         </td>
@@ -65,13 +65,13 @@
       <tr>
         <th class="contact-item">メール</th>
         <td class="contact-body">
-          <input type="email" name="email" class="form-text" placeholder="例）abc.defg@gmail.com" required>
+          <input type="email" name="email" class="form-text" placeholder="例）abc.defg@gmail.com" value="hal.osaka@gmail.com" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">電話</th>
         <td class="contact-body">
-          <input type="tel" name="phone_number" class="form-text" placeholder="09012213443" required>
+          <input type="tel" name="phone_number" class="form-text" placeholder="09012213443" value="09012346789" required>
         </td>
       </tr>
       <tr>
@@ -81,7 +81,7 @@
             <option value="">選択してください</option>
             <option value="公務員">公務員</option>
             <option value="経営者・役員">経営者・役員</option>
-            <option value="会社員">会社員</option>
+            <option value="会社員" selected>会社員</option>
             <option value="自営業">自営業</option>
             <option value="自由業">自由業</option>
             <option value="専業主婦">専業主婦</option>
@@ -123,7 +123,7 @@
             <option value="25">滋賀県</option>
             <option value="26">京都府</option>
             <option value="27">大阪府</option>
-            <option value="28">兵庫県</option>
+            <option value="28" selected>兵庫県</option>
             <option value="29">奈良県</option>
             <option value="30">和歌山県</option>
             <option value="31">鳥取県</option>
@@ -144,14 +144,22 @@
             <option value="46">鹿児島県</option>
             <option value="47">沖縄県</option>
           </select>
-          <input type="text" name="city" class="form-text" placeholder="市区町村" required>
-          <input type="text" name="block" class="form-text" placeholder="番地" required>
+          <input type="text" name="city" class="form-text" placeholder="市区町村" value="尼崎市東難波町" required>
+          <input type="text" name="block" class="form-text" placeholder="番地" value="1-1-1" required>
+          <input type="text" name="building" class="form-text" placeholder="建物名・部屋番号" value="abcマンション-101" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">企業名（法人の方のみ）</th>
         <td class="contact-body">
-          <input type="text" name="company_name" class="form-text" placeholder="">
+          <input type="text" name="company_name" class="form-text" value="hal商事" placeholder="">
+        </td>
+      </tr>
+
+      <tr>
+        <th class="contact-item">パスワード</th>
+        <td class="contact-body">
+          <input type="password" name="password" class="form-text" required>
         </td>
       </tr>
     </table>
