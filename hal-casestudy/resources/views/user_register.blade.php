@@ -21,12 +21,13 @@
     </div>
   </header>
 
-  <form action="">
+  <form action="/user_register" method="post">
+  @csrf
     <table class="contact-table">
       <tr>
         <th class="contact-item">アカウント名</th>
         <td class="contact-body">
-          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" value="{{ohs@12345}}" required>
+          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" value="ohs@12345" required>
         </td>
       </tr>
       <tr>

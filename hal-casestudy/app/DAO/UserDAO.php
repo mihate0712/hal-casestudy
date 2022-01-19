@@ -7,7 +7,8 @@ use App\Entity\User;
 /**
  * usersテーブルへのデータ操作クラス。
  */
-class UserDAO{
+class UserDAO
+{
     /**
      * @var PDO DB接続オブジェクト
      */
@@ -33,7 +34,7 @@ class UserDAO{
      */
     public function insert(User $user): int
     {
-        $sqlInsert = "INSERT INTO users (user_id, job, screen_name, password, last_name, last_name_kana, first_name, first_name_kana, phone_number, email, prefectures, city, block, building, company_name, gender) VALUES (:user_id, :job, :screen_name, :password, :last_name, :last_name_kana, :first_name, :first_name_kana, :phone_number, :email, :prefectures, :city, :block, :building, :company_name, :gender)";
+        $sqlInsert = "INSERT INTO users (user_id, job, screen_name, password, last_name, last_name_kana, first_name, farst_name_kana, phone_number, email, prefectures, city, block, building, company_name, gender) VALUES (:user_id, :job, :screen_name, :password, :last_name, :last_name_kana, :first_name, :farst_name_kana, :phone_number, :email, :prefectures, :city, :block, :building, :company_name, :gender)";
         $stmt = $this->db->prepare($sqlInsert);
         $stmt->bindValue(":user_id", $user->getUserId(), PDO::PARAM_STR);
         $stmt->bindValue(":job", $user->getJob(), PDO::PARAM_STR);
@@ -42,7 +43,7 @@ class UserDAO{
         $stmt->bindValue(":last_name", $user->getLastName(), PDO::PARAM_STR);
         $stmt->bindValue(":last_name_kana", $user->getLastNameKana(), PDO::PARAM_STR);
         $stmt->bindValue(":first_name", $user->getFirstName(), PDO::PARAM_STR);
-        $stmt->bindValue(":first_name_kana", $user->getFirstNameKana(), PDO::PARAM_STR);
+        $stmt->bindValue(":farst_name_kana", $user->getFirstNameKana(), PDO::PARAM_STR);
         $stmt->bindValue(":phone_number", $user->getPhoneNumber(), PDO::PARAM_STR);
         $stmt->bindValue(":email", $user->getEmail(), PDO::PARAM_STR);
         $stmt->bindValue(":prefectures", $user->getPrefectures(), PDO::PARAM_STR);
