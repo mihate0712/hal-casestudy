@@ -16,6 +16,16 @@
 <body>
 
   <body>
+    @isset($validationMsgs)
+    <section id="errorMsg">
+      <p>以下のメッセージをご確認ください。</p>
+      <ul>
+        @foreach($validationMsgs as $msg)
+        <li>{{$msg}}</li>
+        @endforeach
+      </ul>
+    </section>
+    @endisset
 
     <div id="loginForm">
       <div id="logo">
@@ -24,15 +34,16 @@
 
       <fieldset>
         <h1>ログイン</h1>
-        <form>
+        <form action="/login" method="post">
+          @csrf
           <div class="iconUser"></div>
-          <input type="text" placeholder="メールアドレス" required>
+          <input type="text" placeholder="メールアドレス" value="{{$loginId ?? ""}}" name="loginId" required>
           <div class="iconPassword"></div>
-          <input type="password" placeholder="パスワード" required>
+          <input type="password" placeholder="パスワード" name="loginPw" required>
           <input type="submit" value="ログイン">
         </form>
       </fieldset>
-      <p><a href="/login.html">新規登録はこちら</a></p>
+      <p><a href="">新規登録はこちら</a></p>
     </div>
   </body>
 
