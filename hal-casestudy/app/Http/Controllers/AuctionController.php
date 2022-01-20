@@ -16,9 +16,16 @@ class AuctionController extends Controller{
     /**
      * auction登録画面表示処理
      */
-    public function auctionAdd(Request $request){
+    public function auctionAdd(Request $request, int $id){
         $templatePath = "auctionAdd";
         $assign = [];
-        
+        $db = DB::connection()->getPdo();
+        $auctionDAO = new AuctionDAO($db);
+        $vehicleDAO = new VehicleDAO($db);
+        $auction = $auctionDAO->findByVehicleId($id);
+        $carList = $vehicleDAO->findById($id);
+        $assign["auction"] = $auction;
+        $assign["carList"] = $carList;
+        return view($templatePath, $assign);
     }
 }
