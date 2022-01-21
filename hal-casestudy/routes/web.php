@@ -17,6 +17,7 @@ use App\Http\Controllers\VehicleController;
 Route::get('/', function () {
     return view('index');
 });
+<<<<<<< HEAD
 
 Route::get("/vehicle_register", [VehicleController::class, "go_vehicle_register"]);
 Route::post("/vehicle_register", [VehicleController::class, "vehicle_register"]);
@@ -32,3 +33,8 @@ Route::get("/carViewSearch", [VehicleController::class, "carViewSearch"]);
 Route::get("/vehicleDetail/{id}", [VehicleController::class, "vehicleDetail"]);
 >>>>>>> #vehicle_detail
 >>>>>>> 81afd6526d1b6c956f6781b02a8bd8acb153d454
+=======
+Route::get('/auction', function () {
+    return view('auction');
+});
+>>>>>>> #auction
