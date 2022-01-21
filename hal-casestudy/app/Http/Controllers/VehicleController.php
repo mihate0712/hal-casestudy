@@ -7,7 +7,6 @@ use App\Entity\Vehicle;
 use App\DAO\VehicleDAO;
 use App\Http\Controllers\Controller;
 
-<<<<<<< HEAD
 class VehicleController extends Controller {
     /**
      * 車両登録画面表示処理。
@@ -196,12 +195,7 @@ class VehicleController extends Controller {
      * オプション登録処理。
      */
     
-}
-=======
-/**
- * 車両管理に関するコントローラークラス。
- */
-class VehicleController extends Controller{
+
     /**
      * 車両一覧画面表示処理
      */
@@ -228,8 +222,6 @@ class VehicleController extends Controller{
         $assign["carList"] = $carList;
         return view($templatePath, $assign);
     }
-<<<<<<< HEAD
-=======
     /**
      * 車両詳細画面表示処理
      */
@@ -243,6 +235,5 @@ class VehicleController extends Controller{
         $assign["vehicle"] = $vehicle;
         return view($templatePath, $assign);
     }
->>>>>>> #vehicle_detail
 }
->>>>>>> 81afd6526d1b6c956f6781b02a8bd8acb153d454
+
