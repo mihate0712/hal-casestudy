@@ -23,6 +23,83 @@
 
   <h1>登録完了</h1>
 
+
+  <table class="contact-table">
+    <tr>
+      <th class="contact-item">アカウント名</th>
+      <td class="contact-body">
+        {{$user_id}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">ニックネーム</th>
+      <td class="contact-body">
+        {{$screen_name}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">名前</th>
+      <td class="contact-body">
+        {{$first_name}}
+        {{$last_name}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">名前（フリガナ）</th>
+      <td class="contact-body">
+        {{$first_name_kana}}
+        {{$last_name_kana}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">性別</th>
+      <td class="contact-body">
+        {{$gender}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">メール</th>
+      <td class="contact-body">
+        {{$email}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">電話</th>
+      <td class="contact-body">
+        {{$phone_number}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">職業</th>
+      <td class="contact-body">
+        {{$job}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">住所</th>
+      <td class="contact-body">
+        {{$prefectures}}
+        {{$city}}
+        {{$block}}
+        {{$building}}
+      </td>
+    </tr>
+    <tr>
+      <th class="contact-item">企業名（法人の方のみ）</th>
+      <td class="contact-body">
+        {{$company_name}}
+      </td>
+    </tr>
+
+    <tr>
+      <th class="contact-item">パスワード</th>
+      <td class="contact-body">
+        {{$password}}
+      </td>
+    </tr>
+  </table>
+  <input class="contact-submit" type="submit" value="ログイン画面へ戻る" />
+
 </body>
 
 </html>
