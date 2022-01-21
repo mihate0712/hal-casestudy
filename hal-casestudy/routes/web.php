@@ -22,13 +22,7 @@ Route::get("/vehicle_register", [VehicleController::class, "go_vehicle_register"
 Route::post("/vehicle_register", [VehicleController::class, "vehicle_register"]);
 Route::get("/conp", [VehicleController::class, "go_conp"]);
 
-<<<<<<< HEAD
-
-=======
 Route::get("/carView", [VehicleController::class, "carView"]);
 Route::get("/carViewSearch", [VehicleController::class, "carViewSearch"]);
-<<<<<<< HEAD
-=======
 Route::get("/vehicleDetail/{id}", [VehicleController::class, "vehicleDetail"]);
->>>>>>> #vehicle_detail
->>>>>>> 81afd6526d1b6c956f6781b02a8bd8acb153d454
+
