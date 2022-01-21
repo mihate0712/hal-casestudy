@@ -101,6 +101,13 @@ class Vehicle {
      * オークション参加フラグ
      */
     private ?int $auctionJoin = null;
+<<<<<<< HEAD
+=======
+    /**
+     * 画像パス
+     */
+    private ?string $imagePass = "";
+>>>>>>> 81afd6526d1b6c956f6781b02a8bd8acb153d454
 
     /**
      * アクセサメソッド
@@ -681,4 +688,31 @@ class Vehicle {
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Get the value of imagePass
+     *
+     * @return ?string
+     */
+    public function getImagePass(): ?string
+    {
+        return $this->imagePass;
+    }
+
+    /**
+     * Set the value of imagePass
+     *
+     * @param ?string $imagePass
+     *
+     * @return self
+     */
+    public function setImagePass(?string $imagePass): self
+    {
+        $this->imagePass = $imagePass;
+
+        return $this;
+    }
+>>>>>>> 81afd6526d1b6c956f6781b02a8bd8acb153d454
 }

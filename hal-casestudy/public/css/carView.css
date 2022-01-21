@@ -1,0 +1,172 @@
+/*ヘッダー*/
+header{
+    height: 100px;
+    background-color: rgb(68, 68, 68);
+}
+
+/*表示部全体*/
+.displayArea{
+    width: 100%;
+    padding: 25px 0;
+}
+
+/*ページタイトル*/
+.pageTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    color: rgb(70, 70, 70);
+}
+
+/*検索フォーム*/
+.search{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.search input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+    border: none;
+    border-bottom: 2px solid #1b2538;
+    background: transparent;
+}
+.searchKeyword{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 10px auto;
+    background: rgb(255, 124, 174);
+    color: rgb(0,0,0);
+    width: 850px;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.searchMore{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 10px auto;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    width: 850px;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+
+/*車両一覧*/
+.carViewAll{
+    margin-top: 50px;
+}
+.carViewArea{
+    text-align: center;
+    width: 80%;
+    margin: 0px auto;
+}
+
+/*車両ごと*/
+.carBox{
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    border: 5px solid rgb(0,0,0);
+    background-color: rgba(180, 253, 255, 0.3);
+}
+.carImage{
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    border-right: 2.5px solid rgb(0,0,0);
+}
+.nameArea{
+    width: 50%;
+    padding: 10px;
+}
+.carName{
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    font-style: italic;
+}
+.searchMoreLink{
+    margin: 20px auto;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    width: 850px;
+    padding: 10px 100px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/*検索結果ゼロ件*/
+.empty{
+    font-size: 25px;
+    color: rgb(255, 0, 0);
+}
+.carBoxEmpty{
+    width: 100%;
+    margin: 20px;
+    border: 5px solid rgb(0,0,0);
+    background-color: rgba(255, 71, 71, 0.4);
+}
+
+
+/*ページャ*/
+.pager{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0 0;
+}
+.pagerBack{
+    margin: 10px auto;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.pagerNumber{
+    margin: 10px auto;
+    background: rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.pagerNext{
+    margin: 10px auto;
+    background: rgb(255, 124, 205);
+    color: rgb(0,0,0);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/*フッター*/
+footer{
+    height: 100px;
+    background-color: rgb(68, 68, 68);
+}
