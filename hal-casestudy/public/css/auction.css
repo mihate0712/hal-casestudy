@@ -1,0 +1,139 @@
+* {
+    margin: 0 auto;
+}
+header {
+    height: 100px;
+    background-color: aqua;
+}
+footer {
+    height: 100px;
+    background-color: aqua;
+}
+h1 {
+    display: none;
+}
+#nav {
+    display: flex;
+    font-size: larger;
+    margin: 20px;
+    /* background-color: blue; */
+}
+#main {
+    /* background-color: aqua; */
+    width: 100%;
+    display: flex;
+}
+img {
+    width: 100%;
+}
+#left {
+    background-color: red;
+    width: 50%;
+    margin: 0 auto;
+}
+#right {
+    background-color: aqua;
+    width: 30%;
+    margin: 0 auto;
+}
+#timer {
+    text-align: center;
+    font-size: x-large;
+}
+#price_text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: sandybrown;
+    margin: 50px auto;
+    font-size: 20px;
+    width: 100%;
+}
+#button {
+    text-align: center;
+}
+
+/* テーブル部分 */
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 50px auto;
+    padding: 0;
+    width: 1280px;
+    table-layout: fixed;
+  }
+  
+  table tr {
+    background-color: #fff;
+    border: 1px solid #bbb;
+    padding: .35em;
+  }
+  table th,
+  table td {
+    padding: 1em 10px 1em 1em;
+    border-right: 1px solid #bbb;
+  }
+  table th {
+    font-size: .85em;
+  }
+  table thead tr{
+    background-color: #eee;
+  }
+  .txt{
+     text-align: left;
+     font-size: .85em;
+  }
+  .price{
+     text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+      width:100%
+    }
+    table th{
+      background-color: #eee;
+      display: block;
+      border-right: none;
+    }
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #bbb;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+      padding: .625em .625em .625em 4em;
+      border-right: none;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
