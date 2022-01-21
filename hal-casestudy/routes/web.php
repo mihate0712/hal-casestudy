@@ -15,7 +15,7 @@ use App\Http\Controllers\VehicleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get("/vehicle_register", [VehicleController::class, "go_vehicle_register"]);
