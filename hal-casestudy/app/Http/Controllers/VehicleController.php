@@ -37,4 +37,20 @@ class VehicleController extends Controller{
         $assign["carList"] = $carList;
         return view($templatePath, $assign);
     }
+<<<<<<< HEAD
+=======
+    /**
+     * 車両詳細画面表示処理
+     */
+    public function vehicleDetail(Request $request, int $id){
+        $templatePath = "vehicleDetail";
+        $assign = [];
+        $db = DB::connection()->getPdo();
+        $vehicle = new Vehicle();
+        $vehicleDAO = new VehicleDAO($db);
+        $vehicle = $vehicleDAO->findById($id);
+        $assign["vehicle"] = $vehicle;
+        return view($templatePath, $assign);
+    }
+>>>>>>> #vehicle_detail
 }

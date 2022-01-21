@@ -111,4 +111,71 @@ class VehicleDAO {
         }
         return $carList;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * idで検索
+     */
+    public function findById(int $id): ?Vehicle{
+        $sql = "SELECT * FROM vehicles  WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        $vehicle = null;
+        if($result && $row = $stmt->fetch()){
+            $id = $row["id"];
+            $vehicleName = $row["vehicle_name"];
+            $buyingPrice = $row["buying_price"];
+            $modelYear = $row["model_year"];
+            $mileage = $row["mileage"];
+            $engineDisplacement = $row["engine_displacement"];
+            $inspectionDate = $row["inspection_date"];
+            $exteriorColor = $row["exterior_color"];
+            $interiorColor = $row["interior_color"];
+            $colorCode = $row["color_code"];
+            $vehicleIdentificationNumber = $row["vehicle_identification_number"];
+            $score = $row["score"];
+            $warrantyDocument = $row["warranty_document"];
+            $manual = $row["manual"];
+            $carTypeId = $row["car_type_id"];
+            $airConditioning = $row["air_conditioning"];
+            $shiftLever = $row["shift_lever"];
+            $location = $row["location"];
+            $inspection = $row["inspection"];
+            $maker = $row["maker"];
+            $carModel = $row["car_model"];
+            $remarks = $row["remarks"];
+            $auctionJoin = $row["auction_join"];
+            $imagePass = $row["image_pass"];
+
+            $vehicle = new Vehicle();
+            $vehicle->setId($id);
+            $vehicle->setVehicleName($vehicleName);
+            $vehicle->setBuyingPrice($buyingPrice);
+            $vehicle->setModelYear($modelYear);
+            $vehicle->setMileage($mileage);
+            $vehicle->setEngineDisplacement($engineDisplacement);
+            $vehicle->setInspectionDate($inspectionDate);
+            $vehicle->setExteriorColor($exteriorColor);
+            $vehicle->setInteriorColor($interiorColor);
+            $vehicle->setColorCode($colorCode);
+            $vehicle->setVehicleIdentificationNumber($vehicleIdentificationNumber);
+            $vehicle->setScore($score);
+            $vehicle->setWarrantyDocument($warrantyDocument);
+            $vehicle->setManual($manual);
+            $vehicle->setCarTypeId($carTypeId);
+            $vehicle->setAirConditioning($airConditioning);
+            $vehicle->setShiftLever($shiftLever);
+            $vehicle->setLocation($location);
+            $vehicle->setInspection($inspection);
+            $vehicle->setMaker($maker);
+            $vehicle->setCarModel($carModel);
+            $vehicle->setRemarks($remarks);
+            $vehicle->setAuctionJoin($auctionJoin);
+            $vehicle->setImagePass($imagePass);
+        }
+        return $vehicle;
+    }
+>>>>>>> #vehicle_detail
 }

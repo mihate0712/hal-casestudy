@@ -24,3 +24,7 @@ Route::get("/conp", [VehicleController::class, "go_conp"]);
 
 Route::get("/carView", [VehicleController::class, "carView"]);
 Route::get("/carViewSearch", [VehicleController::class, "carViewSearch"]);
+<<<<<<< HEAD
+=======
+Route::get("/vehicleDetail/{id}", [VehicleController::class, "vehicleDetail"]);
+>>>>>>> #vehicle_detail
