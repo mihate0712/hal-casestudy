@@ -27,11 +27,11 @@
                         <div class="nameArea">
                             <p class="carName">{{$vehicle->getVehicleName()}}</p>
                             <a href="/vehicleDetail/{{$vehicle->getId()}}" class="searchMoreLink">この車の詳細情報を見る</a>
-                            <p>aaa</p>
-                            <p>aaa</p>
-                            <p>aaa</p>
-                            <p>aaa</p>
-                            <p>aaa</p>
+                            <p>車両年式：{{$vehicle->getModelYear()}}</p>
+                            <p>走行距離：{{$vehicle->getMileage()}}</p>
+                            <p>排気量：{{$vehicle->getEngineDisplacement()}}</p>
+                            <p>燃料区分：{{$vehicle->getFuel()}}</p>
+                            <p>車両メーカー：{{$vehicle->getMaker()}}</p>
                         </div>
                     </div>
                     @empty

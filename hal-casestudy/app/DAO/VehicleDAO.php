@@ -29,7 +29,7 @@ class VehicleDAO {
      * @return integer 登録情報の連番主キーの値。登録に失敗した場合は-1。
      */
     public function insert(Vehicle $vehicle): int {
-        $sqlInsert = "INSERT INTO vehicles (vehicle_name, buying_price, model_year, mileage, engine_displacement, inspection_date, exterior_color, interior_color, color_code, vehicle_identification_number, score, warranty_document, manual, fuel, car_type_id, air_conditioning, shift_lever, location, inspection, maker, car_model, remarks, auction_join, image_pass) VALUES (:vehicle_name, :buying_price, :model_year, :mileage, :engine_displacement, :inspection_date, :exterior_color, :interior_color, :color_code, :vehicle_identification_number, :score, :warranty_document, :manual, :fuel, :car_type_id, :air_conditioning, :shift_lever, :location, :inspection, :maker, :car_model, :remarks, :, :image_pass)";
+        $sqlInsert = "INSERT INTO vehicles (vehicle_name, buying_price, model_year, mileage, engine_displacement, inspection_date, exterior_color, interior_color, color_code, vehicle_identification_number, score, warranty_document, manual, fuel, car_type_id, air_conditioning, shift_lever, location, inspection, maker, car_model, remarks, auction_join, image_pass) VALUES (:vehicle_name, :buying_price, :model_year, :mileage, :engine_displacement, :inspection_date, :exterior_color, :interior_color, :color_code, :vehicle_identification_number, :score, :warranty_document, :manual, :fuel, :car_type_id, :air_conditioning, :shift_lever, :location, :inspection, :maker, :car_model, :remarks, :auction_join, :image_pass)";
         $stmt = $this->db->prepare($sqlInsert);
         $stmt->bindValue(":vehicle_name", $vehicle->getVehicleName(), PDO::PARAM_STR);
         $stmt->bindValue(":buying_price", $vehicle->getBuyingPrice(), PDO::PARAM_INT);
@@ -78,10 +78,20 @@ class VehicleDAO {
             $id = $row["id"];
             $vehicleName = $row["vehicle_name"];
             $imagePass = $row["image_pass"];
+            $modelYear = $row["model_year"];
+            $mileage = $row["mileage"];
+            $engineDisplacement = $row["engine_displacement"];
+            $fuel = $row["fuel"];
+            $maker = $row["maker"];
             $vehicle = new Vehicle();
             $vehicle->setId($id);
             $vehicle->setVehicleName($vehicleName);
             $vehicle->setImagePass($imagePass);
+            $vehicle->setModelYear($modelYear);
+            $vehicle->setMileage($mileage);
+            $vehicle->setEngineDisplacement($engineDisplacement);
+            $vehicle->setFuel($fuel);
+            $vehicle->setMaker($maker);
             $carList[$id] = $vehicle;
         }
         return $carList;
@@ -101,13 +111,22 @@ class VehicleDAO {
         }else{
             while($row = $stmt->fetch()){
                 $id = $row["id"];
-                $vehicleName = $row["vehicle_name"];
-                $imagePass = $row["image_pass"];
-                $vehicle = new Vehicle();
-                $vehicle->setId($id);
-                $vehicle->setVehicleName($vehicleName);
-                $vehicle->setImagePass($imagePass);
-                $carList[$id] = $vehicle;
+            $vehicleName = $row["vehicle_name"];
+            $imagePass = $row["image_pass"];
+            $modelYear = $row["model_year"];
+            $mileage = $row["mileage"];
+            $engineDisplacement = $row["engine_displacement"];
+            $fuel = $row["fuel"];
+            $maker = $row["maker"];
+            $vehicle = new Vehicle();
+            $vehicle->setId($id);
+            $vehicle->setVehicleName($vehicleName);
+            $vehicle->setImagePass($imagePass);
+            $vehicle->setModelYear($modelYear);
+            $vehicle->setMileage($mileage);
+            $vehicle->setEngineDisplacement($engineDisplacement);
+            $vehicle->setFuel($fuel);
+            $vehicle->setMaker($maker);
             }
         }
         return $carList;
@@ -137,6 +156,7 @@ class VehicleDAO {
             $score = $row["score"];
             $warrantyDocument = $row["warranty_document"];
             $manual = $row["manual"];
+            $fuel = $row["fuel"];
             $carTypeId = $row["car_type_id"];
             $airConditioning = $row["air_conditioning"];
             $shiftLever = $row["shift_lever"];
@@ -163,6 +183,7 @@ class VehicleDAO {
             $vehicle->setScore($score);
             $vehicle->setWarrantyDocument($warrantyDocument);
             $vehicle->setManual($manual);
+            $vehicle->setFuel($fuel);
             $vehicle->setCarTypeId($carTypeId);
             $vehicle->setAirConditioning($airConditioning);
             $vehicle->setShiftLever($shiftLever);
