@@ -27,59 +27,59 @@
       <tr>
         <th class="contact-item">アカウント名</th>
         <td class="contact-body">
-          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" value="ohs@12345" required>
+          <input type="text" name="user_id" class="form-text" placeholder="例）ohs@90384" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">ニックネーム</th>
         <td class="contact-body">
-          <input type="text" name="screen_name" class="form-text" placeholder="例）テカる" value="中野" required>
+          <input type="text" name="screen_name" class="form-text" placeholder="例）テカる" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">名前</th>
         <td class="contact-body">
-          <input type="text" name="first_name" class="form-text" placeholder="例）中野" value="中野" required>
-          <input type="text" name="last_name" class="form-text" placeholder="例）輝" value="輝" required>
+          <input type="text" name="first_name" class="form-text" placeholder="例）中野" value="" required>
+          <input type="text" name="last_name" class="form-text" placeholder="例）輝" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">名前（フリガナ）</th>
         <td class="contact-body">
-          <input type="text" name="first_name_kana" class="form-text" placeholder="例）ナカノ" value="ナカノ" required>
-          <input type="text" name="last_name_kana" class="form-text" placeholder="例）ヒカル" value="ヒカル" required>
+          <input type="text" name="first_name_kana" class="form-text" placeholder="例）ナカノ" value="" required>
+          <input type="text" name="last_name_kana" class="form-text" placeholder="例）ヒカル" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">性別</th>
         <td class="contact-body">
           <label class="contact-sex">
-            <input type="radio" name="gender" value="male" required>
-            <span class="contact-sex-txt">男</span>
+            <input type="radio" name="gender" value="男性" required>
+            <span class="contact-sex-txt">男性</span>
           </label>
           <label class="contact-sex">
-            <input type="radio" name="gender" value="female" required>
-            <span class="contact-sex-txt">女</span>
+            <input type="radio" name="gender" value="女性" required>
+            <span class="contact-sex-txt">女性</span>
           </label>
         </td>
       </tr>
       <tr>
         <th class="contact-item">メール</th>
         <td class="contact-body">
-          <input type="email" name="email" class="form-text" placeholder="例）abc.defg@gmail.com" value="hal.osaka@gmail.com" required>
+          <input type="email" name="email" class="form-text" placeholder="例）abc.defg@gmail.com" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">電話</th>
         <td class="contact-body">
-          <input type="tel" name="phone_number" class="form-text" placeholder="09012213443" value="09012346789" required>
+          <input type="tel" name="phone_number" class="form-text" placeholder="09012213443" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">職業</th>
         <td class="contact-body">
           <select name="job" class="form-select" required>
-            <option value="">選択してください</option>
+            <option value="" selected>選択してください</option>
             <option value="公務員">公務員</option>
             <option value="経営者・役員">経営者・役員</option>
             <option value="会社員" selected>会社員</option>
@@ -97,63 +97,63 @@
         <td class="contact-body">
           <select name="prefectures" class="form-select" required>
             <option value="" selected>選択してください</option>
-            <option value="1">北海道</option>
-            <option value="2">青森県</option>
-            <option value="3">岩手県</option>
-            <option value="4">宮城県</option>
-            <option value="5">秋田県</option>
-            <option value="6">山形県</option>
-            <option value="7">福島県</option>
-            <option value="8">茨城県</option>
-            <option value="9">栃木県</option>
-            <option value="10">群馬県</option>
-            <option value="11">埼玉県</option>
-            <option value="12">千葉県</option>
-            <option value="13">東京都</option>
-            <option value="14">神奈川県</option>
-            <option value="15">新潟県</option>
-            <option value="16">富山県</option>
-            <option value="17">石川県</option>
-            <option value="18">福井県</option>
-            <option value="19">山梨県</option>
-            <option value="20">長野県</option>
-            <option value="21">岐阜県</option>
-            <option value="22">静岡県</option>
-            <option value="23">愛知県</option>
-            <option value="24">三重県</option>
-            <option value="25">滋賀県</option>
-            <option value="26">京都府</option>
-            <option value="27">大阪府</option>
-            <option value="28" selected>兵庫県</option>
-            <option value="29">奈良県</option>
-            <option value="30">和歌山県</option>
-            <option value="31">鳥取県</option>
-            <option value="32">島根県</option>
-            <option value="33">岡山県</option>
-            <option value="34">広島県</option>
-            <option value="35">山口県</option>
-            <option value="36">徳島県</option>
-            <option value="37">香川県</option>
-            <option value="38">愛媛県</option>
-            <option value="39">高知県</option>
-            <option value="40">福岡県</option>
-            <option value="41">佐賀県</option>
-            <option value="42">長崎県</option>
-            <option value="43">熊本県</option>
-            <option value="44">大分県</option>
-            <option value="45">宮崎県</option>
-            <option value="46">鹿児島県</option>
-            <option value="47">沖縄県</option>
+            <option value="北海道">北海道</option>
+            <option value="青森県">青森県</option>
+            <option value="岩手県">岩手県</option>
+            <option value="宮城県">宮城県</option>
+            <option value="秋田県">秋田県</option>
+            <option value="山形県">山形県</option>
+            <option value="福島県">福島県</option>
+            <option value="茨城県">茨城県</option>
+            <option value="栃木県">栃木県</option>
+            <option value="群馬県">群馬県</option>
+            <option value="埼玉県">埼玉県</option>
+            <option value="千葉県">千葉県</option>
+            <option value="東京都">東京都</option>
+            <option value="神奈川県">神奈川県</option>
+            <option value="新潟県">新潟県</option>
+            <option value="富山県">富山県</option>
+            <option value="石川県">石川県</option>
+            <option value="福井県">福井県</option>
+            <option value="山梨県">山梨県</option>
+            <option value="山梨県">長野県</option>
+            <option value="岐阜県">岐阜県</option>
+            <option value="静岡県">静岡県</option>
+            <option value="愛知県">愛知県</option>
+            <option value="三重県">三重県</option>
+            <option value="滋賀県">滋賀県</option>
+            <option value="京都府">京都府</option>
+            <option value="大阪府">大阪府</option>
+            <option value="兵庫県">兵庫県</option>
+            <option value="奈良県">奈良県</option>
+            <option value="和歌山県">和歌山県</option>
+            <option value="鳥取県">鳥取県</option>
+            <option value="島根県">島根県</option>
+            <option value="岡山県">岡山県</option>
+            <option value="広島県">広島県</option>
+            <option value="山口県">山口県</option>
+            <option value="徳島県">徳島県</option>
+            <option value="香川県">香川県</option>
+            <option value="愛媛県">愛媛県</option>
+            <option value="高知県">高知県</option>
+            <option value="福岡県">福岡県</option>
+            <option value="佐賀県">佐賀県</option>
+            <option value="長崎県">長崎県</option>
+            <option value="熊本県">熊本県</option>
+            <option value="大分県">大分県</option>
+            <option value="宮崎県">宮崎県</option>
+            <option value="鹿児島県">鹿児島県</option>
+            <option value="沖縄県">沖縄県</option>
           </select>
-          <input type="text" name="city" class="form-text" placeholder="市区町村" value="尼崎市東難波町" required>
-          <input type="text" name="block" class="form-text" placeholder="番地" value="1-1-1" required>
-          <input type="text" name="building" class="form-text" placeholder="建物名・部屋番号" value="abcマンション-101" required>
+          <input type="text" name="city" class="form-text" placeholder="市区町村" value="" required>
+          <input type="text" name="block" class="form-text" placeholder="番地" value="" required>
+          <input type="text" name="building" class="form-text" placeholder="建物名・部屋番号" value="" required>
         </td>
       </tr>
       <tr>
         <th class="contact-item">企業名（法人の方のみ）</th>
         <td class="contact-body">
-          <input type="text" name="company_name" class="form-text" value="hal商事" placeholder="">
+          <input type="text" name="company_name" class="form-text" value="" placeholder="">
         </td>
       </tr>
 
