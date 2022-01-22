@@ -105,6 +105,14 @@ class Vehicle {
      * 画像パス
      */
     private ?string $imagePass = "";
+    /**
+     * 型式
+     */
+    private ?string $carId = "";
+    /**
+     * オプション
+     */
+    private ?array $option = [];
 
     /**
      * アクセサメソッド
@@ -706,6 +714,54 @@ class Vehicle {
     public function setImagePass(?string $imagePass): self
     {
         $this->imagePass = $imagePass;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of carId
+     *
+     * @return ?string
+     */
+    public function getCarId(): ?string
+    {
+        return $this->carId;
+    }
+
+    /**
+     * Set the value of carId
+     *
+     * @param ?string $carId
+     *
+     * @return self
+     */
+    public function setCarId(?string $carId): self
+    {
+        $this->carId = $carId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of option
+     *
+     * @return ?array
+     */
+    public function getOption(): ?array
+    {
+        return $this->option;
+    }
+
+    /**
+     * Set the value of option
+     *
+     * @param ?array $option
+     *
+     * @return self
+     */
+    public function setOption(?array $option): self
+    {
+        $this->option = $option;
 
         return $this;
     }

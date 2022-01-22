@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>ヘッダー部分</header>
-    <nav>
+    <!-- <nav>
         <form action="" method="get">
             <input type="search" name="search" id="search" placeholder="キーワードを入力">
             <input type="submit" name="submit" id="submit" value="検索">
         </form>
         <p id="syousai">詳細検索は<input type="button" value="こちら"></p>
-    </nav>
-    <h1><img src="{{ asset('images/main.jpg')}}"></h1>
+    </nav> -->
+    <h1><img src="{{ asset('images/main_sales.jpg')}}"></h1>
     <h2>あなたにオススメ</h2>
     <div class="flex">
         <div class="content">

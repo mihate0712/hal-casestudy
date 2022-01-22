@@ -10,13 +10,25 @@
 <body>
     <div class="contact">
         <h1 class="contact-ttl">新規車両登録</h1>
-        <form action="/vehicle_register" method="post">
+        <form action="/vehicle_register" method="post" enctype="multipart/form-data">
         @csrf
             <table class="contact-table">
                 <tr>
                     <th class="contact-item">車両名</th>
                     <td class="contact-body">
                         <input type="text" name="vehicle_name" id="vehicle_name" value="{{$vehicle->getVehicleName()}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">画像</th>
+                    <td class="contact-body">
+                        <input type="file" name="image_pass" id="image_pass" value="{{$vehicle->getImagePass()}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact-item">型式</th>
+                    <td class="contact-body">
+                        <input type="text" name="car_id" id="car_id" value="{{$vehicle->getCarId()}}" required>
                     </td>
                 </tr>
                 <tr>
@@ -208,39 +220,39 @@
                     <th class="contact-item">オプション</th>
                     <td class="contact-body">
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="0"/>
+                            <input type="checkbox" name="option[]" value="0"/>
                             <span class="contact-option-txt">PS</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="1"/>
+                            <input type="checkbox" name="option[]" value="1"/>
                             <span class="contact-option-txt">PW</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="2"/>
+                            <input type="checkbox" name="option[]" value="2"/>
                             <span class="contact-option-txt">AW</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="3"/>
+                            <input type="checkbox" name="option[]" value="3"/>
                             <span class="contact-option-txt">背面タイヤ</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="4"/>
+                            <input type="checkbox" name="option[]" value="4"/>
                             <span class="contact-option-txt">カワ</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="5"/>
+                            <input type="checkbox" name="option[]" value="5"/>
                             <span class="contact-option-txt">AB</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="6"/>
+                            <input type="checkbox" name="option[]" value="6"/>
                             <span class="contact-option-txt">TV</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="7"/>
+                            <input type="checkbox" name="option[]" value="7"/>
                             <span class="contact-option-txt">ナビ</span>
                         </label>
                         <label class="contact-option">
-                            <input type="checkbox" name="option" value="8"/>
+                            <input type="checkbox" name="option[]" value="8"/>
                             <span class="contact-option-txt">Rスポ</span>
                         </label>
                     </td>

@@ -3,6 +3,7 @@ namespace App\DAO;
 
 use PDO;
 use App\Entity\Vehicle;
+use Illuminate\Http\Request;
 
 class VehicleDAO {
     /**
@@ -29,7 +30,7 @@ class VehicleDAO {
      * @return integer 登録情報の連番主キーの値。登録に失敗した場合は-1。
      */
     public function insert(Vehicle $vehicle): int {
-        $sqlInsert = "INSERT INTO vehicles (vehicle_name, buying_price, model_year, mileage, engine_displacement, inspection_date, exterior_color, interior_color, color_code, vehicle_identification_number, score, warranty_document, manual, fuel, car_type_id, air_conditioning, shift_lever, location, inspection, maker, car_model, remarks, auction_join, image_pass) VALUES (:vehicle_name, :buying_price, :model_year, :mileage, :engine_displacement, :inspection_date, :exterior_color, :interior_color, :color_code, :vehicle_identification_number, :score, :warranty_document, :manual, :fuel, :car_type_id, :air_conditioning, :shift_lever, :location, :inspection, :maker, :car_model, :remarks, :auction_join, :image_pass)";
+        $sqlInsert = "INSERT INTO vehicles (vehicle_name, buying_price, model_year, mileage, engine_displacement, inspection_date, exterior_color, interior_color, color_code, vehicle_identification_number, score, warranty_document, manual, fuel, car_type_id, air_conditioning, shift_lever, location, inspection, maker, car_model, remarks, car_id, auction_join, image_pass) VALUES (:vehicle_name, :buying_price, :model_year, :mileage, :engine_displacement, :inspection_date, :exterior_color, :interior_color, :color_code, :vehicle_identification_number, :score, :warranty_document, :manual, :fuel, :car_type_id, :air_conditioning, :shift_lever, :location, :inspection, :maker, :car_model, :remarks, :car_id, :auction_join, :image_pass)";
         $stmt = $this->db->prepare($sqlInsert);
         $stmt->bindValue(":vehicle_name", $vehicle->getVehicleName(), PDO::PARAM_STR);
         $stmt->bindValue(":buying_price", $vehicle->getBuyingPrice(), PDO::PARAM_INT);
@@ -53,6 +54,7 @@ class VehicleDAO {
         $stmt->bindValue(":maker", $vehicle->getMaker(), PDO::PARAM_STR);
         $stmt->bindValue(":car_model", $vehicle->getCarModel(), PDO::PARAM_STR);
         $stmt->bindValue(":remarks", $vehicle->getRemarks(), PDO::PARAM_STR);
+        $stmt->bindValue(":car_id", $vehicle->getCarId(), PDO::PARAM_STR);
         $stmt->bindValue(":auction_join", $vehicle->getAuctionJoin(), PDO::PARAM_INT);
         $stmt->bindValue(":image_pass", $vehicle->getImagePass(), PDO::PARAM_STR);
         $result = $stmt->execute();
@@ -197,5 +199,26 @@ class VehicleDAO {
         }
         return $vehicle;
     }
-}
 
+    // オプション登録
+    public function insert2($id, $option) {
+        $sqlInsert = "INSERT INTO options (id, option_name) VALUES (:id, :option_name)";
+        $stmt = $this->db->prepare($sqlInsert);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->bindValue(":option_name", $option, PDO::PARAM_STR);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+    
+    // 画像の保存
+    public function store(Request $request) {
+        $filename = $request->file('image_pass')->getClientOriginalName();
+
+        $request->file('image_pass')->storeAs('public/images',$filename); 
+
+        return $filename;
+    }
+
+
+}
