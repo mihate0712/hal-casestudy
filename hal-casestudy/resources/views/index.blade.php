@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/reset.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles/footer.css') }}">
     <title>TOP画面</title>
 </head>
 <body>
-    <header>ヘッダー部分</header>
+    <header class="site-header">
+        <div class="wrapper site-header__wrapper">
+            <div class="site-header__start">
+            <a href="#" class="brand">Brand</a>
+            </div>
+            <div class="site-header__middle">
+            <nav class="nav">
+                <button class="nav__toggle" aria-expanded="false" type="button">
+                menu
+                </button>
+                <ul class="nav__wrapper">
+                <li class="nav__item"><a href="#">ホーム</a></li>
+                <li class="nav__item"><a href="#">オークション</a></li>
+                <li class="nav__item"><a href="#">車両一覧</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="site-header__end">
+            <a class="button" href="#">ログイン</a>
+            <a class="button" href="#">新規登録</a>
+            </div>
+        </div>
+    </header>
     <nav>
         <form action="" method="get">
             <input type="search" name="search" id="search" placeholder="キーワードを入力">
@@ -108,6 +133,22 @@
             </a>
         </div>
     </div>
-    <footer>フッター部分</footer>
+    <footer id="footer01" class="footer outer-block">
+      <div class="logo">
+        <a href="">
+          <img src="img/logo" alt="">
+        </a>
+      </div>
+      <ul class="nav">
+        <li><a href="">ホーム</a></li>
+        <li><a href="">オークション</a></li>
+        <li><a href="">車両一覧</a></li>
+        <li><a href="">利用規約</a></li>
+        <li><a href="">コンタクト</a></li>
+      </ul>
+      <p class="copyright">
+        MASARU MOTOR © HAL Inc.
+      </p>
+    </footer>
 </body>
 </html>
