@@ -11,37 +11,15 @@
     <title>TOP画面</title>
 </head>
 <body>
-    <header class="site-header">
-        <div class="wrapper site-header__wrapper">
-            <div class="site-header__start">
-            <a href="#" class="brand">Brand</a>
-            </div>
-            <div class="site-header__middle">
-            <nav class="nav">
-                <button class="nav__toggle" aria-expanded="false" type="button">
-                menu
-                </button>
-                <ul class="nav__wrapper">
-                <li class="nav__item"><a href="#">ホーム</a></li>
-                <li class="nav__item"><a href="#">オークション</a></li>
-                <li class="nav__item"><a href="#">車両一覧</a></li>
-                </ul>
-            </nav>
-            </div>
-            <div class="site-header__end">
-            <a class="button" href="#">ログイン</a>
-            <a class="button" href="#">新規登録</a>
-            </div>
-        </div>
-    </header>
-    <nav>
+    <header>ヘッダー部分</header>
+    <!-- <nav>
         <form action="" method="get">
             <input type="search" name="search" id="search" placeholder="キーワードを入力">
             <input type="submit" name="submit" id="submit" value="検索">
         </form>
         <p id="syousai">詳細検索は<input type="button" value="こちら"></p>
-    </nav>
-    <h1><img src="{{ asset('images/main.jpg')}}"></h1>
+    </nav> -->
+    <h1><img src="{{ asset('images/main_sales.jpg')}}"></h1>
     <h2>あなたにオススメ</h2>
     <div class="flex">
         <div class="content">

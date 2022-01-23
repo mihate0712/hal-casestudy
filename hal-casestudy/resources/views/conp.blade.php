@@ -25,6 +25,18 @@
                 </td>
             </tr>
             <tr>
+                <th class="contact-item">画像</th>
+                <td class="contact-body">
+                    <img src="{{ asset('storage/images/'.$image_pass) }}">
+                </td>
+            </tr>
+            <tr>
+                <th class="contact-item">型式</th>
+                <td class="contact-body">
+                    {{$car_id}}
+                </td>
+            </tr>
+            <tr>
                 <th class="contact-item">仕入れ価格</th>
                 <td class="contact-body">
                     {{$buying_price}}円
@@ -147,8 +159,8 @@
             <tr>
                 <th class="contact-item">オプション</th>
                 <td class="contact-body">
-
-            </td>
+                    {{$option}}
+                </td>
             </tr>
             <tr>
                 <th class="contact-item">オークション登録</th>

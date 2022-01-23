@@ -29,7 +29,14 @@ class VehicleController extends Controller {
         $isRedirect = false;
         $assign = [];
 
+        $db = DB::connection()->getPdo();
+        $vehicleDAO = new VehicleDAO($db);
+
+        // 画像保存
+        $image_pass = $vehicleDAO->store($request);
+
         $vehicle_name = $request->input("vehicle_name");
+        $car_id = $request->input("car_id");
         $buying_price = $request->input("buying_price");
         $model_year = $request->input("model_year");
         $mileage = $request->input("mileage");
@@ -52,9 +59,11 @@ class VehicleController extends Controller {
         $car_model = $request->input("car_model");
         $remarks = $request->input("remarks");
         $auction_join = $request->input("auction_join");
+        $option = $request->input("option");
 
         $vehicle = new Vehicle();
         $vehicle->setVehicleName($vehicle_name);
+        $vehicle->setCarId($car_id);
         $vehicle->setBuyingPrice($buying_price);
         $vehicle->setModelYear($model_year);
         $vehicle->setMileage($mileage);
@@ -77,9 +86,9 @@ class VehicleController extends Controller {
         $vehicle->setCarModel($car_model);
         $vehicle->setRemarks($remarks);
         $vehicle->setAuctionJoin($auction_join);
-                
-        $db = DB::connection()->getPdo();
-        $vehicleDAO = new VehicleDAO($db);
+        $vehicle->setImagePass($image_pass);
+        $vehicle->setOption($option);
+
 
         // 選択肢を変換
         if($warranty_document == 0) {
@@ -150,8 +159,46 @@ class VehicleController extends Controller {
             $auction_join = "なし";
         }
 
+        $option_at = array();
+
+        foreach($option as $m) {
+            if($m == 0) {
+                $m = "PS";
+            }
+            elseif($m == 1) {
+                $m = "PW";
+            }
+            elseif($m == 2) {
+                $m = "AW";
+            }
+            elseif($m == 3) {
+                $m = "背面タイヤ";
+            }
+            elseif($m == 4) {
+                $m = "カワ";
+            }
+            elseif($m == 5) {
+                $m = "AB";
+            }
+            elseif($m == 6) {
+                $m = "TV";
+            }
+            elseif($m == 7) {
+                $m = "ナビ";
+            }
+            elseif($m == 8) {
+                $m = "Rスポ";
+            }
+
+            $option_at[] = $m;
+
+        }
+
+        $option_at = implode(",", $option_at);
+
         $assign["vehicle"] = $vehicle;
         $assign["vehicle_name"] = $vehicle_name;
+        $assign["car_id"] = $car_id;
         $assign["buying_price"] = $buying_price;
         $assign["model_year"] = $model_year;
         $assign["mileage"] = $mileage;
@@ -174,27 +221,20 @@ class VehicleController extends Controller {
         $assign["car_model"] = $car_model;
         $assign["remarks"] = $remarks;
         $assign["auction_join"] = $auction_join;
+        $assign["image_pass"] = $image_pass;
+        $assign["option"] = $option_at;
+
 
         $id = $vehicleDAO->insert($vehicle);
+        $vehicleDAO->insert2($id, $option_at);
+
 
         $assign["id"] = $id;
 
         $response = view($templatePath, $assign);
 
-        // if($isRedirect) {
-        //     $response = redirect("/conp");
-        // }
-        // else {
-        //     $response = view($templatePath, $assign);
-        // }
-
         return $response;
     }
-
-    /**
-     * オプション登録処理。
-     */
-    
 
     /**
      * 車両一覧画面表示処理
