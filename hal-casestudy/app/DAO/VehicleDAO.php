@@ -220,6 +220,37 @@ class VehicleDAO {
         return $filename;
     }
 
+<<<<<<< HEAD
+    /**
+     * 全車両検索
+     */
+    public function findAll2(): array{
+        $sql = "SELECT * FROM vehicles Limit 4";
+        $stmt = $this->db->prepare($sql);
+        $result = $stmt->execute();
+        $carList = [];
+        while($row = $stmt->fetch()){
+            $id = $row["id"];
+            $vehicleName = $row["vehicle_name"];
+            $imagePass = $row["image_pass"];
+            $modelYear = $row["model_year"];
+            $mileage = $row["mileage"];
+            $engineDisplacement = $row["engine_displacement"];
+            $fuel = $row["fuel"];
+            $maker = $row["maker"];
+            $vehicle = new Vehicle();
+            $vehicle->setId($id);
+            $vehicle->setVehicleName($vehicleName);
+            $vehicle->setImagePass($imagePass);
+            $vehicle->setModelYear($modelYear);
+            $vehicle->setMileage($mileage);
+            $vehicle->setEngineDisplacement($engineDisplacement);
+            $vehicle->setFuel($fuel);
+            $vehicle->setMaker($maker);
+            $carList[$id] = $vehicle;
+        }
+        return $carList;
+=======
     //オークション変更
     public function update(int $id){
         $sqlUpdate = "UPDATE vehicles SET auction_join = :auction_join WHERE id = :id";
@@ -228,6 +259,7 @@ class VehicleDAO {
         $stmt->bindValue(":auction_join", 1, PDO::PARAM_INT);
         $result = $stmt->execute();
         return $result;
+>>>>>>> bc523f85cad54db527b62c6177ece96c3a57eed5
     }
 
 }

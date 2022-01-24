@@ -60,7 +60,7 @@ class LoginController extends Controller
             }
         }
         if ($isRedirect) {
-            $response = redirect("login_comp");
+            $response = redirect("/");
         } else {
             if (!empty($validationMsgs)) {
                 $assign["validationMsgs"] = $validationMsgs;
@@ -70,6 +70,8 @@ class LoginController extends Controller
         }
         return $response;
     }
+
+
     /**
      * ログアウト処理。
      */
