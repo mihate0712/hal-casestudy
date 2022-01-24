@@ -22,7 +22,9 @@
                 </button>
                 <ul class="nav__wrapper">
                 <li class="nav__item"><a href="/">ホーム</a></li>
-                <li class="nav__item"><a href="/auction">オークション</a></li>
+                @if($session == 1)
+                    <li class="nav__item"><a href="/auction">オークション</a></li>
+                @endif
                 <li class="nav__item"><a href="/carView">車両一覧</a></li>
                 </ul>
             </nav>
@@ -130,10 +132,12 @@
             </div>
             <div class="buttons">
                 <a href="#" class="searchAlike" name="searchAlike">似た形式の車両を探す</a><br>
-                @if($auction_join == "オークション登録済み(次回土曜日出品予定)")
-                    <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
-                @else
-                    <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                @if($session == 1)
+                    @if($auction_join == "オークション登録済み(次回土曜日出品予定)")
+                        <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
+                    @else
+                        <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                    @endif
                 @endif
                 <a href="/carView" class="back" name="back">車両一覧画面に戻る</a>
             </div>
@@ -146,7 +150,13 @@
             </div>
             <ul class="nav">
                 <li><a href="/">ホーム</a></li>
-                <li><a href="/auction">オークション</a></li>
+                @if($session == 1)
+                    <li><a href="/auction">オークション</a></li>
+                    <li><a href="/vehicle_register">車両新規登録</a></li>
+                @else
+                    <li><a href="/user_register">新規会員登録</a></li>
+                    <li><a href="/login">ログイン</a></li>
+                @endif
                 <li><a href="/carView">車両一覧</a></li>
                 <li><a href="">利用規約</a></li>
                 <li><a href="">コンタクト</a></li>

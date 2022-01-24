@@ -27,7 +27,9 @@
               </button>
               <ul class="nav__wrapper">
               <li class="nav__item"><a href="/">ホーム</a></li>
-              <li class="nav__item"><a href="/auction">オークション</a></li>
+              @if($session == 1)
+                <li class="nav__item"><a href="/auction">オークション</a></li>
+              @endif
               <li class="nav__item"><a href="/carView">車両一覧</a></li>
               </ul>
           </nav>
@@ -149,7 +151,13 @@
       </div>
       <ul class="nav">
         <li><a href="/">ホーム</a></li>
-        <li><a href="/auction">オークション</a></li>
+        @if($session == 1)
+            <li><a href="/auction">オークション</a></li>
+            <li><a href="/vehicle_register">車両新規登録</a></li>
+        @else
+            <li><a href="/user_register">新規会員登録</a></li>
+            <li><a href="/login">ログイン</a></li>
+        @endif
         <li><a href="/carView">車両一覧</a></li>
         <li><a href="">利用規約</a></li>
         <li><a href="">コンタクト</a></li>
