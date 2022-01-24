@@ -42,7 +42,10 @@
     </div>
   </header>
 
-  <h1>登録完了</h1>
+  <div class="pageTitleArea">
+    <h1 class="pageTitle">登録完了</h1>
+    <p class="pageAbout">以下の内容で新規会員登録を行いました。</p>
+  </div>
 
 
   <table class="contact-table">

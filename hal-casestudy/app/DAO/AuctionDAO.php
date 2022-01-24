@@ -21,7 +21,7 @@ class AuctionDAO{
         $stmt->bindValue(":current_prices", 0, PDO::PARAM_INT);
         $stmt->bindValue(":sold_price", 0, PDO::PARAM_INT);
         $stmt->bindValue(":auction_status", 1, PDO::PARAM_INT);
-        $stmt->bindValue(":user_id", null, PDO::PARAM_INT);
+        $stmt->bindValue(":user_id", 0, PDO::PARAM_INT);
         $stmt->bindValue(":vehicle_id", $id, PDO::PARAM_INT);
         $stmt->bindValue(":deliver_car_status", 0, PDO::PARAM_INT);
         $stmt->bindValue(":payment", 0, PDO::PARAM_INT);
