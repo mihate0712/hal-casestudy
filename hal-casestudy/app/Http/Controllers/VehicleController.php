@@ -9,6 +9,17 @@ use App\Http\Controllers\Controller;
 
 class VehicleController extends Controller {
     /**
+     * TOP画面表示処理。
+     */
+    public function go_top(Request $request) {
+        $templatePath = "index";
+        $db = DB::connection()->getPdo();
+        $vehicleDAO = new VehicleDAO($db);
+        $carList = $vehicleDAO->findAll();
+        $assign["carList"] = $carList;
+        return view($templatePath, $assign);
+    }
+    /**
      * 車両登録画面表示処理。
      */
     public function go_vehicle_register(Request $request) {

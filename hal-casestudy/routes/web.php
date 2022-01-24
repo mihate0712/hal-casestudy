@@ -17,10 +17,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
+Route::get("/", [VehicleController::class, "go_top"]);
 Route::get("/vehicle_register", [VehicleController::class, "go_vehicle_register"]);
 Route::post("/vehicle_register", [VehicleController::class, "vehicle_register"]);
 Route::get("/conp", [VehicleController::class, "go_conp"]);
