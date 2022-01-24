@@ -101,14 +101,14 @@ header{
 }
 .carName{
     width: 100%;
-    margin: 10px auto;
+    margin: 20px auto 40px;
     text-align: center;
     font-size: 30px;
     font-weight: lighter;
     font-style: italic;
 }
 .searchMoreLink{
-    margin: 20px auto;
+    margin: 30px auto;
     background: rgb(124, 213, 255);
     color: rgb(0,0,0);
     width: 850px;
@@ -116,6 +116,15 @@ header{
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
+}
+.carViewAbout{
+    margin: initial;
+    font-size: initial;
+    font-weight: initial;
+    margin: 30px 0 0;
+}
+.carViewAboutMargin{
+    margin: 10px 0;
 }
 
 /*検索結果ゼロ件*/

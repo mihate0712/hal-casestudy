@@ -5,13 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/reset.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles/footer.css') }}">
     <title>TOP画面</title>
 </head>
 <body>
+<<<<<<< HEAD
     <header>ヘッダー部分</header>
     <nav>
         登録車両一覧、車両検索は<a href="/carView">こちら</a>から
     </nav>
+=======
+    <header class="site-header">
+        <div class="wrapper site-header__wrapper">
+            <div class="site-header__start">
+            <a href="#" class="brand">Brand</a>
+            </div>
+            <div class="site-header__middle">
+            <nav class="nav">
+                <button class="nav__toggle" aria-expanded="false" type="button">
+                menu
+                </button>
+                <ul class="nav__wrapper">
+                <li class="nav__item"><a href="/">ホーム</a></li>
+                <li class="nav__item"><a href="/auction">オークション</a></li>
+                <li class="nav__item"><a href="/carView">車両一覧</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="site-header__end">
+            <a class="button" href="/login">ログイン</a>
+            <a class="button" href="/user_register">新規登録</a>
+            </div>
+        </div>
+    </header>
+    <!-- <nav>
+        <form action="" method="get">
+            <input type="search" name="search" id="search" placeholder="キーワードを入力">
+            <input type="submit" name="submit" id="submit" value="検索">
+        </form>
+        <p id="syousai">詳細検索は<input type="button" value="こちら"></p>
+    </nav> -->
+>>>>>>> 1cc4ff863a6f12319b25363eb52b74505ec6bd7a
     <h1><img src="{{ asset('images/main_sales.jpg')}}"></h1>
     <h2>あなたにオススメ</h2>
     <div class="flex">
@@ -112,6 +148,22 @@
             </a>
         </div>
     </div>
-    <footer>フッター部分</footer>
+    <footer id="footer01" class="footer outer-block">
+      <div class="logo">
+        <a href="">
+          <img src="img/logo" alt="">
+        </a>
+      </div>
+      <ul class="nav">
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/auction">オークション</a></li>
+        <li><a href="/carView">車両一覧</a></li>
+        <li><a href="">利用規約</a></li>
+        <li><a href="">コンタクト</a></li>
+      </ul>
+      <p class="copyright">
+        MASARU MOTOR © HAL Inc.
+      </p>
+    </footer>
 </body>
 </html>

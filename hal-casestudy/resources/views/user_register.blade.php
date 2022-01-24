@@ -12,12 +12,33 @@
   <!-- <link rel="stylesheet" href="css/style.css"> -->
   <!-- <link rel="stylesheet" href="css/destyle.css"> -->
   <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="{{ asset('css/styles/reset.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styles/header.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styles/footer.css') }}">
 </head>
 
 <body>
-  <header class="header-1">
-    <div class="header-inner">
-      <h1>ロゴ</h1>
+  <header class="site-header">
+    <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+        <a href="#" class="brand">Brand</a>
+        </div>
+        <div class="site-header__middle">
+        <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+            </button>
+            <ul class="nav__wrapper">
+            <li class="nav__item"><a href="/">ホーム</a></li>
+            <li class="nav__item"><a href="/auction">オークション</a></li>
+            <li class="nav__item"><a href="/carView">車両一覧</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="site-header__end">
+        <a class="button" href="/login">ログイン</a>
+        <a class="button" href="/user_register">新規登録</a>
+        </div>
     </div>
   </header>
 
@@ -167,6 +188,24 @@
 
     <input class="contact-submit" type="submit" value="登録" />
   </form>
+
+  <footer id="footer01" class="footer outer-block">
+      <div class="logo">
+        <a href="">
+          <img src="img/logo" alt="">
+        </a>
+      </div>
+      <ul class="nav">
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/auction">オークション</a></li>
+        <li><a href="/carView">車両一覧</a></li>
+        <li><a href="">利用規約</a></li>
+        <li><a href="">コンタクト</a></li>
+      </ul>
+      <p class="copyright">
+        MASARU MOTOR © HAL Inc.
+      </p>
+    </footer>
 
 </body>
 
