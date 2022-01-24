@@ -37,7 +37,7 @@
             <h1 class="pageTitle">DAIHATSU WAKE</h1>
             <div class="carImages">
                 <div class="carImageMain">
-                    <img src="/images/{{$vehicle->getImagePass()}}.jpg" class="carImageFirst">
+                    <img src="{{ asset('storage/images/'.$vehicle->getImagePass())}}" class="carImageFirst">
                 </div>
             </div>
             <div class="details">

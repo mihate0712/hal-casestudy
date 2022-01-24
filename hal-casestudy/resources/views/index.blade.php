@@ -11,12 +11,6 @@
     <title>TOP画面</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <header>ヘッダー部分</header>
-    <nav>
-        登録車両一覧、車両検索は<a href="/carView">こちら</a>から
-    </nav>
-=======
     <header class="site-header">
         <div class="wrapper site-header__wrapper">
             <div class="site-header__start">
@@ -47,7 +41,6 @@
         </form>
         <p id="syousai">詳細検索は<input type="button" value="こちら"></p>
     </nav> -->
->>>>>>> 1cc4ff863a6f12319b25363eb52b74505ec6bd7a
     <h1><img src="{{ asset('images/main_sales.jpg')}}"></h1>
     <h2>あなたにオススメ</h2>
     <div class="flex">
