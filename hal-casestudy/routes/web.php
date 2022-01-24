@@ -47,3 +47,5 @@ Route::get("/login_comp", [LoginController::class, "go_login_comp"]);
 Route::get("/insertAuction/{id}", [AuctionController::class, "insertAuction"]);
 Route::post("/goAuction", [AuctionController::class, "goAuction"]);
 Route::get("/auctionComplete", [AuctionController::class, "auctionComplete"]);
+
+Route::get("/logout", [LoginController::class, "logout"]);

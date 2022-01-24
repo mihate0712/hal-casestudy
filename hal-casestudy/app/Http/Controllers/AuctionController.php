@@ -19,7 +19,8 @@ class AuctionController extends Controller{
     public function insertAuction(Request $request, int $id){
         $templatePath = "goAuction";
         $assign = [];
-        if($request->session()){
+        $session = 0;
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -38,7 +39,9 @@ class AuctionController extends Controller{
      */
     public function goAuction(Request $request){
         $templatePath = "auctionComplete";
-        if($request->session()){
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;

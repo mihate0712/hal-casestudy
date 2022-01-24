@@ -12,8 +12,10 @@ class VehicleController extends Controller {
      * TOP画面表示処理。
      */
     public function go_top(Request $request) {
+        $session = 0;
+        $assign = [];
         $templatePath = "index";
-        if($request->session()){
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -29,8 +31,9 @@ class VehicleController extends Controller {
      * 車両登録画面表示処理。
      */
     public function go_vehicle_register(Request $request) {
+        $session = 0;
         $templatePath = "vehicle_register";
-        if($request->session()){
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -51,7 +54,8 @@ class VehicleController extends Controller {
         $templatePath = "conp";
         $isRedirect = false;
         $assign = [];
-        if($request->session()){
+        $session = 0;
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -270,7 +274,9 @@ class VehicleController extends Controller {
      */
     public function carView(Request $request){
         $templatePath = "carView";
-        if($request->session()){
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -287,7 +293,9 @@ class VehicleController extends Controller {
      */
     public function carViewSearch(Request $request){
         $templatePath = "carView";
-        if($request->session()){
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -308,7 +316,9 @@ class VehicleController extends Controller {
      */
     public function vehicleDetail(Request $request, int $id){
         $templatePath = "vehicleDetail";
-        if($request->session()){
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;

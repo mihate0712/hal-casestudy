@@ -14,24 +14,20 @@
 </head>
 
 <body>
-
-  <body>
-    @isset($validationMsgs)
-    <section id="errorMsg">
-      <p>以下のメッセージをご確認ください。</p>
-      <ul>
-        @foreach($validationMsgs as $msg)
-        <li>{{$msg}}</li>
-        @endforeach
-      </ul>
-    </section>
-    @endisset
-
     <div id="loginForm">
       <div id="logo">
         <img src="{{ asset('images/logo.png')}}" class="logo">
       </div>
-
+      @isset($validationMsgs)
+        <section id="errorMsg">
+          <p class="error">以下のメッセージをご確認ください。</p>
+          <ul>
+            @foreach($validationMsgs as $msg)
+            <li class="err">{{$msg}}</li>
+            @endforeach
+          </ul>
+        </section>
+      @endisset
       <fieldset>
         <h1>ログイン</h1>
         <form action="/login" method="post">
@@ -45,11 +41,9 @@
       </fieldset>
       <div class="newLink">
         <a href="/user_register" class="new">新規登録はこちら</a>
+        <a href="/" class="back">TOPページに戻る</a>
       </div>
     </div>
   </body>
-
-
-</body>
 
 </html>

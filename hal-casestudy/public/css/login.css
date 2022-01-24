@@ -17,8 +17,11 @@ html {
 body{
   font-family:'Open Sans',sans-serif;
 }
-#logo{
+.logo{
   text-align: center;
+  width: 350px;
+  height: auto;
+  margin: 0px auto;
 }
 fieldset{
   width:400px;
@@ -102,9 +105,6 @@ input[type="submit"]{
 input[type="submit"]:hover{
   background:rgb(126, 177, 253);
 }
-::-webkit-input-placeholder {
-
-}
 
 #loginForm{
   position: absolute;
@@ -131,4 +131,33 @@ input[type="submit"]:hover{
   text-decoration: none;
   border-radius: 30px;
   font-size: 16px;
+}
+.back{
+  margin: 100px auto;
+  background: rgb(100, 100, 100);
+  color: rgb(0,0,0);
+  width: 900px;
+  padding: 10px 120px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.error{
+  font-size: 22px;
+  margin: 40px auto 0;
+  text-align: center;
+  font-weight: lighter;
+  color: rgb(255, 70, 70);
+}
+.err{
+  font-size: 18px;
+  margin: 20px auto 0;
+  text-align: center;
+  font-weight: lighter;
+  color: rgb(255, 70, 70);
+}
+
+ul{
+  list-style: none;
 }

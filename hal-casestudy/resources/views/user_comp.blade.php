@@ -38,7 +38,7 @@
         @if($session == 1)
             <div class="site-header__end">
                 <a class="button" href="/vehicle_register">車両新規登録</a>
-                <a class="button" href="#">ログアウト</a>
+                <a class="button" href="/logout">ログアウト</a>
             </div>
           @else
             <div class="site-header__end">

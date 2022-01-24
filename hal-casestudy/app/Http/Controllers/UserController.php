@@ -15,7 +15,8 @@ class UserController extends Controller {
      */
     public function go_user_register(Request $request) {
         $templatePath = "user_register";
-        if($request->session()){
+        $session = 0;
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
@@ -34,7 +35,8 @@ class UserController extends Controller {
         $templatePath = "user_comp";
         $isRedirect = false;
         $assign = [];
-        if($request->session()){
+        $session = 0;
+        if($request->session()->has("id")){
             $session = 1;
         }else{
             $session = 0;
