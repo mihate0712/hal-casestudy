@@ -9,8 +9,8 @@ main {
   box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 .logo{
-  width: 120px;
-  height: auto;
+  width: 125px;
+  height: 50px;
 }
 .brand {
   font-weight: bold;

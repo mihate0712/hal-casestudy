@@ -18,7 +18,7 @@
     <header class="site-header">
       <div class="wrapper site-header__wrapper">
           <div class="site-header__start">
-          <a href="/index" class="brand"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
+          <a href="/index" class="brand"><img src="{{ asset('images/logo.png')}}" class="logo"></a>
           </div>
           <div class="site-header__middle">
           <nav class="nav">
