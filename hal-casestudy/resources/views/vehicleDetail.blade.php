@@ -73,27 +73,27 @@
                     </tr>
                     <tr>
                         <th class="th">新車保証書の有無</th>
-                        <td class="td">{{$vehicle->getWarrantyDocument()}}</td>
+                        <td class="td">{{$warranty_document}}</td>
                     </tr>
                     <tr>
                         <th class="th">取扱説明書の有無</th>
-                        <td class="td">{{$vehicle->getManual()}}</td>
+                        <td class="td">{{$manual}}</td>
                     </tr>
                     <tr>
                         <th class="th">燃料区分</th>
-                        <td class="td">{{$vehicle->getFuel()}}</td>
+                        <td class="td">{{$fuel}}</td>
                     </tr>
                     <tr>
                         <th class="th">AT／MT区分</th>
-                        <td class="td">{{$vehicle->getCarTypeId()}}</td>
+                        <td class="td">{{$car_type_id}}</td>
                     </tr>
                     <tr>
                         <th class="th">エアコンID</th>
-                        <td class="td">{{$vehicle->getAirConditioning()}}</td>
+                        <td class="td">{{$air_conditioning}}</td>
                     </tr>
                     <tr>
                         <th class="th">シフトレバー</th>
-                        <td class="td">{{$vehicle->getShiftLever()}}</td>
+                        <td class="td">{{$shift_lever}}</td>
                     </tr>
                     <tr>
                         <th class="th">車の所在地</th>
@@ -101,7 +101,7 @@
                     </tr>
                     <tr>
                         <th class="th">検査済みの有無</th>
-                        <td class="td">{{$vehicle->getInspection()}}</td>
+                        <td class="td">{{$inspection}}</td>
                     </tr>
                     <tr>
                         <th class="th">車のメーカー</th>
@@ -117,14 +117,17 @@
                     </tr>
                     <tr>
                         <th class="th">オークション出品状況</th>
-                        <td class="td">{{$vehicle->getAuctionJoin()}}</td>
+                        <td class="td">{{$auction_join}}</td>
                     </tr>
                 </table>
             </div>
             <div class="buttons">
                 <a href="#" class="searchAlike" name="searchAlike">似た形式の車両を探す</a><br>
-                <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
-                <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                @if($auction_join == "オークション登録済み(次回土曜日出品予定)")
+                    <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
+                @else
+                    <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                @endif
                 <a href="/carView" class="back" name="back">車両一覧画面に戻る</a>
             </div>
         </div>

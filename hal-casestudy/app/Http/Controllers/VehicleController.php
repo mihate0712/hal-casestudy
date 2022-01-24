@@ -283,7 +283,83 @@ class VehicleController extends Controller {
         $vehicle = new Vehicle();
         $vehicleDAO = new VehicleDAO($db);
         $vehicle = $vehicleDAO->findById($id);
+        if($vehicle->getWarrantyDocument() == 0) {
+            $warranty_document = "あり";
+        }
+        else {
+            $warranty_document = "なし";
+        }
+
+        if($vehicle->getManual() == 0) {
+            $manual = "あり";
+        }
+        else {
+            $manual = "なし";
+        }
+
+        if($vehicle->getFuel() == 0) {
+            $fuel = "ガソリン";
+        }
+        if($fuel == 1) {
+            $fuel = "ハイオク";
+        }
+        else {
+            $fuel = "軽油";
+        }
+
+        if($vehicle->getCarTypeId() == 0) {
+            $car_type_id = "AT";
+        }
+        else {
+            $car_type_id = "MT";
+        }
+
+        if($vehicle->getAirConditioning() == 0) {
+            $air_conditioning = "AC";
+        }
+        if($vehicle->getAirConditioning() == 1) {
+            $air_conditioning = "AAC";
+        }
+        if($vehicle->getAirConditioning() == 2) {
+            $air_conditioning = "WAC";
+        }
+        else {
+            $air_conditioning = "なし";
+        }
+
+        if($vehicle->getShiftLever() == 0) {
+            $shift_lever = "フロア";
+        }
+        if($vehicle->getShiftLever() == 1) {
+            $shift_lever = "コラム";
+        }
+        else {
+            $shift_lever = "インパネ";
+        }
+
+        if($vehicle->getInspection() == 0) {
+            $inspection = "検査済み";
+        }
+        else {
+            $inspection = "検査未実施";
+        }
+
+        if($vehicle->getAuctionJoin() == 0) {
+            $auction_join = "オークション登録済み(次回土曜日出品予定)";
+        }
+        else {
+            $auction_join = "オークション未登録";
+        }
+
         $assign["vehicle"] = $vehicle;
+        $assign["warranty_document"] = $warranty_document;
+        $assign["manual"] = $manual;
+        $assign["fuel"] = $fuel;
+        $assign["car_type_id"] = $car_type_id;
+        $assign["air_conditioning"] = $air_conditioning;
+        $assign["shift_lever"] = $shift_lever;
+        $assign["inspection"] = $inspection;
+        $assign["auction_join"] = $auction_join;
         return view($templatePath, $assign);
     }
 }

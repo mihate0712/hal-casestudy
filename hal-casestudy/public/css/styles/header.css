@@ -8,7 +8,10 @@ main {
   padding-bottom: 120px;/*←footerの高さ*/
   box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
-
+.logo{
+  width: 120px;
+  height: auto;
+}
 .brand {
   font-weight: bold;
   font-size: 20px; }
