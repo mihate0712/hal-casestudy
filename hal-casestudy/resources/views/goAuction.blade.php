@@ -126,7 +126,7 @@
                 @csrf
                 <div class="buttons">
                     <input type="hidden" name="id" value="{{$vehicle->getId()}}">
-                    <button type="submit" class="goAuction" name="goAuction">この車両をオークションに登録する</button><br>
+                    <button type="submit" class="goAuctionButton" name="goAuction">この車両をオークションに登録する</button><br>
                     <a href="/vehicleDetail/{{$vehicle->getId()}}" class="backAuction" name="back">オークションに登録せず戻る</a>
                 </div>
             </form>
