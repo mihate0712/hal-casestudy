@@ -13,10 +13,16 @@ class VehicleController extends Controller {
      */
     public function go_top(Request $request) {
         $templatePath = "index";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findAll2();
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -24,11 +30,17 @@ class VehicleController extends Controller {
      */
     public function go_vehicle_register(Request $request) {
         $templatePath = "vehicle_register";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
 
         $assign = [];
         $assign["vehicle"] = new Vehicle();
         $assign["db"] = $db;
+        $assign["session"] = $session;
 
         return view($templatePath, $assign);
     }
@@ -39,6 +51,11 @@ class VehicleController extends Controller {
         $templatePath = "conp";
         $isRedirect = false;
         $assign = [];
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
 
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
@@ -234,6 +251,7 @@ class VehicleController extends Controller {
         $assign["auction_join"] = $auction_join;
         $assign["image_pass"] = $image_pass;
         $assign["option"] = $option_at;
+        $assign["session"] = $session;
 
 
         $id = $vehicleDAO->insert($vehicle);
@@ -252,10 +270,16 @@ class VehicleController extends Controller {
      */
     public function carView(Request $request){
         $templatePath = "carView";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findAll();
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -263,6 +287,11 @@ class VehicleController extends Controller {
      */
     public function carViewSearch(Request $request){
         $templatePath = "carView";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $assign = [];
         $db = DB::connection()->getPdo();
         $searchWord = $request->input("search");
@@ -271,6 +300,7 @@ class VehicleController extends Controller {
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findByName($vehicle->getVehicleName());
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -278,6 +308,11 @@ class VehicleController extends Controller {
      */
     public function vehicleDetail(Request $request, int $id){
         $templatePath = "vehicleDetail";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $assign = [];
         $db = DB::connection()->getPdo();
         $vehicle = new Vehicle();
@@ -360,6 +395,7 @@ class VehicleController extends Controller {
         $assign["shift_lever"] = $shift_lever;
         $assign["inspection"] = $inspection;
         $assign["auction_join"] = $auction_join;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
 }

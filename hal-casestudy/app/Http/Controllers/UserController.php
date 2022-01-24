@@ -15,10 +15,16 @@ class UserController extends Controller {
      */
     public function go_user_register(Request $request) {
         $templatePath = "user_register";
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $assign = [];
         $assign["user"] = new User();
         $assign["db"] = $db;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -28,6 +34,11 @@ class UserController extends Controller {
         $templatePath = "user_comp";
         $isRedirect = false;
         $assign = [];
+        if($request->session()){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
 
         $user_id = $request->input("user_id");
         $job = $request->input("job");
@@ -86,6 +97,7 @@ class UserController extends Controller {
         $assign["building"] = $building;
         $assign["company_name"] = $company_name;
         $assign["gender"] = $gender;
+        $assign["session"] = $session;
         
 
         $userDAO->insert($user);

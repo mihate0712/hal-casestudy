@@ -27,10 +27,17 @@
                 </ul>
             </nav>
             </div>
+            @if($session == 1)
             <div class="site-header__end">
-            <a class="button" href="/login">ログイン</a>
-            <a class="button" href="/user_register">新規登録</a>
+                <a class="button" href="/vehicle_register">車両新規登録</a>
+                <a class="button" href="#">ログアウト</a>
             </div>
+            @else
+                <div class="site-header__end">
+                    <a class="button" href="/login">ログイン</a>
+                    <a class="button" href="/user_register">新規登録</a>
+                </div>
+            @endif
         </div>
         </header>
         <div class="displayArea">
