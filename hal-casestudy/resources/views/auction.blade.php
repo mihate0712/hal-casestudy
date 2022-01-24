@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/auction.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles/reset.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auction.css') }}">
     <title>オークション画面</title>
 </head>
 <body>
