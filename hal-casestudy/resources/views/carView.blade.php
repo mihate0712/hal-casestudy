@@ -46,7 +46,7 @@
                 <div class="carViewArea">
                     @forelse($carList as $id => $vehicle)
                     <div class="carBox">
-                        <img src="./images/{{$vehicle->getImagePass()}}.jpg" class="carImage">
+                        <img src="{{ asset('storage/images/'.$vehicle->getImagePass())}}" class="carImage">
                         <div class="nameArea">
                             <p class="carName">{{$vehicle->getVehicleName()}}</p>
                             <a href="/vehicleDetail/{{$vehicle->getId()}}" class="searchMoreLink">この車の詳細情報を見る</a>

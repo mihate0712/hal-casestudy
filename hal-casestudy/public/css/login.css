@@ -118,3 +118,17 @@ input[type="submit"]:hover{
 	text-align: center;
 	/* width: 300px; */
 }
+
+.newLink{
+  margin: 50px 0;
+}
+.new{
+  margin: 100px auto;
+  background: rgb(124, 207, 255);
+  color: rgb(0,0,0);
+  width: 900px;
+  padding: 10px 120px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+}

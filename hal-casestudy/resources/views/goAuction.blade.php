@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author">
-        <title>車両詳細</title>
+        <title>オークション登録確認</title>
         <link rel="stylesheet" href="/css/vehicleDetail.css" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/styles/reset.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styles/header.css') }}">
@@ -34,7 +34,8 @@
         </div>
         </header>
         <div class="displayArea">
-            <h1 class="pageTitle">DAIHATSU WAKE</h1>
+            <h1 class="pageTitle">オークション登録確認</h1>
+            <p class="pageAbout">この車両をオークションに出品します。よろしいですか？</p>
             <div class="carImages">
                 <div class="carImageMain">
                     <img src="{{ asset('storage/images/'.$vehicle->getImagePass())}}" class="carImageFirst">
@@ -121,12 +122,14 @@
                     </tr>
                 </table>
             </div>
-            <div class="buttons">
-                <a href="#" class="searchAlike" name="searchAlike">似た形式の車両を探す</a><br>
-                <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
-                <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
-                <a href="/carView" class="back" name="back">車両一覧画面に戻る</a>
-            </div>
+            <form action="/goAuction" method="post">
+                @csrf
+                <div class="buttons">
+                    <input type="hidden" name="id" value="{{$vehicle->getId()}}">
+                    <button type="submit" class="goAuction" name="goAuction">この車両をオークションに登録する</button><br>
+                    <a href="/vehicleDetail/{{$vehicle->getId()}}" class="backAuction" name="back">オークションに登録せず戻る</a>
+                </div>
+            </form>
         </div>
         <footer id="footer01" class="footer outer-block">
             <div class="logo">

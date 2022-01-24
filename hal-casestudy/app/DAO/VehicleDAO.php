@@ -220,6 +220,7 @@ class VehicleDAO {
         return $filename;
     }
 
+<<<<<<< HEAD
     /**
      * 全車両検索
      */
@@ -249,6 +250,16 @@ class VehicleDAO {
             $carList[$id] = $vehicle;
         }
         return $carList;
+=======
+    //オークション変更
+    public function update(int $id){
+        $sqlUpdate = "UPDATE vehicles SET auction_join = :auction_join WHERE id = :id";
+        $stmt = $this->db->prepare($sqlUpdate);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->bindValue(":auction_join", 1, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        return $result;
+>>>>>>> bc523f85cad54db527b62c6177ece96c3a57eed5
     }
 
 }

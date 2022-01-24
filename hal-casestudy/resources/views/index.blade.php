@@ -34,7 +34,18 @@
             </div>
         </div>
     </header>
+<<<<<<< HEAD
     <h1><img class="main" src="{{ asset('images/main_sales.jpg')}}"></h1>
+=======
+    <!-- <nav>
+        <form action="" method="get">
+            <input type="search" name="search" id="search" placeholder="キーワードを入力">
+            <input type="submit" name="submit" id="submit" value="検索">
+        </form>
+        <p id="syousai">詳細検索は<input type="button" value="こちら"></p>
+    </nav> -->
+    <h1><img src="{{ asset('images/main_sales.jpg')}}"></h1>
+>>>>>>> bc523f85cad54db527b62c6177ece96c3a57eed5
     <h2>あなたにオススメ</h2>
     <div class="flex">
         @foreach($carList as $id => $vehicle)
