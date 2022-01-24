@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuctionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,7 @@ Route::get("/user_comp", [UserController::class, "go_user_comp"]);
 Route::get("/login", [LoginController::class, "go_login"]);
 Route::post("/login", [LoginController::class, "login"]);
 Route::get("/login_comp", [LoginController::class, "go_login_comp"]);
+
+Route::get("/insertAuction/{id}", [AuctionController::class, "insertAuction"]);
+Route::post("/goAuction", [AuctionController::class, "goAuction"]);
+Route::get("/auctionComplete", [AuctionController::class, "auctionComplete"]);

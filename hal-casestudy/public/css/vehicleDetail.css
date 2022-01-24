@@ -17,6 +17,11 @@ header{
     font-weight: lighter;
     color: rgb(70, 70, 70);
 }
+.pageAbout{
+    text-align: center;
+    margin: 20px auto;
+    color: rgb(70, 70, 70);
+}
 
 /*車両画像*/
 .carImages{
@@ -145,6 +150,23 @@ table,th,td{
     background: rgb(100, 100, 100);
     color: rgb(0,0,0);
     padding: 10px 110px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 75px;
+}
+.backAuction{
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 750px;
+    margin: 10px 20px;
+    background: rgb(124, 213, 255);
+    color: rgb(0,0,0);
+    padding: 10px 85px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 16px;
