@@ -42,6 +42,10 @@
     </div>
   </header>
 
+  <div class="pageTitleArea">
+    <h1 class="pageTitle">新規会員登録</h1>
+    <p class="pageAbout">下記項目をすべて入力し、登録ボタンを押してください。</p>
+  </div>
   <form action="/user_register" method="post">
   @csrf
     <table class="contact-table">

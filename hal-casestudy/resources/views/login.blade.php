@@ -43,7 +43,9 @@
           <input type="submit" value="ログイン">
         </form>
       </fieldset>
-      <p><a href="">新規登録はこちら</a></p>
+      <div class="newLink">
+        <a href="/user_register" class="new">新規登録はこちら</a>
+      </div>
     </div>
   </body>
 
