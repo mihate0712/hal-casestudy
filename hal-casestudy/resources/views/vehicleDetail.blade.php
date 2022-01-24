@@ -124,6 +124,7 @@
             <div class="buttons">
                 <a href="#" class="searchAlike" name="searchAlike">似た形式の車両を探す</a><br>
                 <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
+                <a href="/goAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
                 <a href="/carView" class="back" name="back">車両一覧画面に戻る</a>
             </div>
         </div>
