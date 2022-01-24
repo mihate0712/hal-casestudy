@@ -12,23 +12,38 @@ class VehicleController extends Controller {
      * TOP画面表示処理。
      */
     public function go_top(Request $request) {
+        $session = 0;
+        $assign = [];
         $templatePath = "index";
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findAll2();
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
      * 車両登録画面表示処理。
      */
     public function go_vehicle_register(Request $request) {
+        $session = 0;
         $templatePath = "vehicle_register";
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
 
         $assign = [];
         $assign["vehicle"] = new Vehicle();
         $assign["db"] = $db;
+        $assign["session"] = $session;
 
         return view($templatePath, $assign);
     }
@@ -39,6 +54,12 @@ class VehicleController extends Controller {
         $templatePath = "conp";
         $isRedirect = false;
         $assign = [];
+        $session = 0;
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
 
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
@@ -234,6 +255,7 @@ class VehicleController extends Controller {
         $assign["auction_join"] = $auction_join;
         $assign["image_pass"] = $image_pass;
         $assign["option"] = $option_at;
+        $assign["session"] = $session;
 
 
         $id = $vehicleDAO->insert($vehicle);
@@ -252,10 +274,18 @@ class VehicleController extends Controller {
      */
     public function carView(Request $request){
         $templatePath = "carView";
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findAll();
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -263,6 +293,13 @@ class VehicleController extends Controller {
      */
     public function carViewSearch(Request $request){
         $templatePath = "carView";
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $assign = [];
         $db = DB::connection()->getPdo();
         $searchWord = $request->input("search");
@@ -271,6 +308,7 @@ class VehicleController extends Controller {
         $vehicleDAO = new VehicleDAO($db);
         $carList = $vehicleDAO->findByName($vehicle->getVehicleName());
         $assign["carList"] = $carList;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
     /**
@@ -278,12 +316,96 @@ class VehicleController extends Controller {
      */
     public function vehicleDetail(Request $request, int $id){
         $templatePath = "vehicleDetail";
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $assign = [];
         $db = DB::connection()->getPdo();
         $vehicle = new Vehicle();
         $vehicleDAO = new VehicleDAO($db);
         $vehicle = $vehicleDAO->findById($id);
+        if($vehicle->getWarrantyDocument() == 0) {
+            $warranty_document = "あり";
+        }
+        else {
+            $warranty_document = "なし";
+        }
+
+        if($vehicle->getManual() == 0) {
+            $manual = "あり";
+        }
+        else {
+            $manual = "なし";
+        }
+
+        if($vehicle->getFuel() == 0) {
+            $fuel = "ガソリン";
+        }
+        if($fuel == 1) {
+            $fuel = "ハイオク";
+        }
+        else {
+            $fuel = "軽油";
+        }
+
+        if($vehicle->getCarTypeId() == 0) {
+            $car_type_id = "AT";
+        }
+        else {
+            $car_type_id = "MT";
+        }
+
+        if($vehicle->getAirConditioning() == 0) {
+            $air_conditioning = "AC";
+        }
+        if($vehicle->getAirConditioning() == 1) {
+            $air_conditioning = "AAC";
+        }
+        if($vehicle->getAirConditioning() == 2) {
+            $air_conditioning = "WAC";
+        }
+        else {
+            $air_conditioning = "なし";
+        }
+
+        if($vehicle->getShiftLever() == 0) {
+            $shift_lever = "フロア";
+        }
+        if($vehicle->getShiftLever() == 1) {
+            $shift_lever = "コラム";
+        }
+        else {
+            $shift_lever = "インパネ";
+        }
+
+        if($vehicle->getInspection() == 0) {
+            $inspection = "検査済み";
+        }
+        else {
+            $inspection = "検査未実施";
+        }
+
+        if($vehicle->getAuctionJoin() == 0) {
+            $auction_join = "オークション登録済み(次回土曜日出品予定)";
+        }
+        else {
+            $auction_join = "オークション未登録";
+        }
+
         $assign["vehicle"] = $vehicle;
+        $assign["warranty_document"] = $warranty_document;
+        $assign["manual"] = $manual;
+        $assign["fuel"] = $fuel;
+        $assign["car_type_id"] = $car_type_id;
+        $assign["air_conditioning"] = $air_conditioning;
+        $assign["shift_lever"] = $shift_lever;
+        $assign["inspection"] = $inspection;
+        $assign["auction_join"] = $auction_join;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
 }

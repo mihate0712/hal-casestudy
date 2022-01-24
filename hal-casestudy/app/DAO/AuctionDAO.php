@@ -20,8 +20,8 @@ class AuctionDAO{
         $stmt = $this->db->prepare($sqlInsert);
         $stmt->bindValue(":current_prices", 0, PDO::PARAM_INT);
         $stmt->bindValue(":sold_price", 0, PDO::PARAM_INT);
-        $stmt->bindValue(":auction_status", 1, PDO::PARAM_INT);
-        $stmt->bindValue(":user_id", null, PDO::PARAM_INT);
+        $stmt->bindValue(":auction_status", 0, PDO::PARAM_INT);
+        $stmt->bindValue(":user_id", 1, PDO::PARAM_INT);
         $stmt->bindValue(":vehicle_id", $id, PDO::PARAM_INT);
         $stmt->bindValue(":deliver_car_status", 0, PDO::PARAM_INT);
         $stmt->bindValue(":payment", 0, PDO::PARAM_INT);
@@ -32,6 +32,12 @@ class AuctionDAO{
         $result = $stmt->execute();
         if($result){
             $auctionId = $this->db->lastInsertId();
+            $sqlUpdate = "UPDATE vehicles SET auction_join = :auction_join WHERE id = :id";
+            $stmt = $this->db->prepare($sqlUpdate);
+            $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+            $stmt->bindValue(":auction_join", 0, PDO::PARAM_INT);
+            $result = $stmt->execute();
+            return $result;
         }else{
             $auctionId = -1;
         }

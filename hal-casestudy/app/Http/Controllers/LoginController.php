@@ -75,11 +75,11 @@ class LoginController extends Controller
     /**
      * ログアウト処理。
      */
-    // public function logout(Request $request)
-    // {
-    //     $session = $request->session();
-    //     $session->flush();
-    //     $session->regenerate();
-    //     return redirect("/");
-    // }
+    public function logout(Request $request)
+    {
+        $session = $request->session();
+        $session->flush();
+        $session->regenerate();
+        return redirect("/");
+    }
 }

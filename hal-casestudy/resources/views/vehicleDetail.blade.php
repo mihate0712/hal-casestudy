@@ -13,7 +13,7 @@
         <header class="site-header">
         <div class="wrapper site-header__wrapper">
             <div class="site-header__start">
-            <a href="#" class="brand">Brand</a>
+            <a href="/" class="brand"><img src="{{ asset('images/logo.png')}}" class="logo"></a>
             </div>
             <div class="site-header__middle">
             <nav class="nav">
@@ -22,15 +22,24 @@
                 </button>
                 <ul class="nav__wrapper">
                 <li class="nav__item"><a href="/">ホーム</a></li>
-                <li class="nav__item"><a href="/auction">オークション</a></li>
+                @if($session == 1)
+                    <li class="nav__item"><a href="/auction">オークション</a></li>
+                @endif
                 <li class="nav__item"><a href="/carView">車両一覧</a></li>
                 </ul>
             </nav>
             </div>
-            <div class="site-header__end">
-            <a class="button" href="/login">ログイン</a>
-            <a class="button" href="/user_register">新規登録</a>
-            </div>
+            @if($session == 1)
+                <div class="site-header__end">
+                    <a class="button" href="/vehicle_register">車両新規登録</a>
+                    <a class="button" href="/logout">ログアウト</a>
+                </div>
+            @else
+                <div class="site-header__end">
+                    <a class="button" href="/login">ログイン</a>
+                    <a class="button" href="/user_register">新規登録</a>
+                </div>
+            @endif
         </div>
         </header>
         <div class="displayArea">
@@ -45,15 +54,15 @@
                 <table class="carDetail">
                     <tr>
                         <th class="th">車両年式</th>
-                        <td class="td">{{$vehicle->getModelYear()}}</td>
+                        <td class="td">{{$vehicle->getModelYear()}}年</td>
                     </tr>
                     <tr>
                         <th class="th">走行距離</th>
-                        <td class="td">{{$vehicle->getMileage()}}</td>
+                        <td class="td">{{$vehicle->getMileage()}}万Km</td>
                     </tr>
                     <tr>
                         <th class="th">排気量</th>
-                        <td class="td">{{$vehicle->getEngineDisplacement()}}</td>
+                        <td class="td">{{$vehicle->getEngineDisplacement()}}cc</td>
                     </tr>
                     <tr>
                         <th class="th">次回車検日</th>
@@ -73,27 +82,27 @@
                     </tr>
                     <tr>
                         <th class="th">新車保証書の有無</th>
-                        <td class="td">{{$vehicle->getWarrantyDocument()}}</td>
+                        <td class="td">{{$warranty_document}}</td>
                     </tr>
                     <tr>
                         <th class="th">取扱説明書の有無</th>
-                        <td class="td">{{$vehicle->getManual()}}</td>
+                        <td class="td">{{$manual}}</td>
                     </tr>
                     <tr>
                         <th class="th">燃料区分</th>
-                        <td class="td">{{$vehicle->getFuel()}}</td>
+                        <td class="td">{{$fuel}}</td>
                     </tr>
                     <tr>
                         <th class="th">AT／MT区分</th>
-                        <td class="td">{{$vehicle->getCarTypeId()}}</td>
+                        <td class="td">{{$car_type_id}}</td>
                     </tr>
                     <tr>
                         <th class="th">エアコンID</th>
-                        <td class="td">{{$vehicle->getAirConditioning()}}</td>
+                        <td class="td">{{$air_conditioning}}</td>
                     </tr>
                     <tr>
                         <th class="th">シフトレバー</th>
-                        <td class="td">{{$vehicle->getShiftLever()}}</td>
+                        <td class="td">{{$shift_lever}}</td>
                     </tr>
                     <tr>
                         <th class="th">車の所在地</th>
@@ -101,7 +110,7 @@
                     </tr>
                     <tr>
                         <th class="th">検査済みの有無</th>
-                        <td class="td">{{$vehicle->getInspection()}}</td>
+                        <td class="td">{{$inspection}}</td>
                     </tr>
                     <tr>
                         <th class="th">車のメーカー</th>
@@ -117,14 +126,19 @@
                     </tr>
                     <tr>
                         <th class="th">オークション出品状況</th>
-                        <td class="td">{{$vehicle->getAuctionJoin()}}</td>
+                        <td class="td">{{$auction_join}}</td>
                     </tr>
                 </table>
             </div>
             <div class="buttons">
                 <a href="#" class="searchAlike" name="searchAlike">似た形式の車両を探す</a><br>
-                <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
-                <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                @if($session == 1)
+                    @if($auction_join == "オークション登録済み(次回土曜日出品予定)")
+                        <a href="#" class="goToAuction" name="goToAuction">オークション画面に遷移する</a><br>
+                    @else
+                        <a href="/insertAuction/{{$vehicle->getId()}}" class="goAuction" name="goAuction">この車両をオークションに登録する</a><br>
+                    @endif
+                @endif
                 <a href="/carView" class="back" name="back">車両一覧画面に戻る</a>
             </div>
         </div>
@@ -136,7 +150,13 @@
             </div>
             <ul class="nav">
                 <li><a href="/">ホーム</a></li>
-                <li><a href="/auction">オークション</a></li>
+                @if($session == 1)
+                    <li><a href="/auction">オークション</a></li>
+                    <li><a href="/vehicle_register">車両新規登録</a></li>
+                @else
+                    <li><a href="/user_register">新規会員登録</a></li>
+                    <li><a href="/login">ログイン</a></li>
+                @endif
                 <li><a href="/carView">車両一覧</a></li>
                 <li><a href="">利用規約</a></li>
                 <li><a href="">コンタクト</a></li>

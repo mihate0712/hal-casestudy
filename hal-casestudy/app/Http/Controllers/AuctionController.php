@@ -19,11 +19,18 @@ class AuctionController extends Controller{
     public function insertAuction(Request $request, int $id){
         $templatePath = "goAuction";
         $assign = [];
+        $session = 0;
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $db = DB::connection()->getPdo();
         $vehicle = new Vehicle();
         $vehicleDAO = new VehicleDAO($db);
         $vehicle = $vehicleDAO->findById($id);
         $assign["vehicle"] = $vehicle;
+        $assign["session"] = $session;
         return view($templatePath, $assign);
     }
 
@@ -32,6 +39,13 @@ class AuctionController extends Controller{
      */
     public function goAuction(Request $request){
         $templatePath = "auctionComplete";
+        $session = 0;
+        $assign = [];
+        if($request->session()->has("id")){
+            $session = 1;
+        }else{
+            $session = 0;
+        }
         $id = $request->input("id");
         $db = DB::connection()->getPdo();
         $vehicle = new Vehicle();
@@ -45,6 +59,7 @@ class AuctionController extends Controller{
         $vehicleDAO = new VehicleDAO($db);
         $vehicle = $vehicleDAO->findById($id);
         $assign["vehicle"] = $vehicle;
+        $assign["session"] = $session;
         $response = view($templatePath, $assign);
         return $response;
     }

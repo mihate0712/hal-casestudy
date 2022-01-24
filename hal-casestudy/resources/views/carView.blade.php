@@ -13,7 +13,7 @@
         <header class="site-header">
             <div class="wrapper site-header__wrapper">
                 <div class="site-header__start">
-                <a href="#" class="brand">Brand</a>
+                <a href="/" class="brand"><img src="{{ asset('images/logo.png')}}" class="logo"></a>
                 </div>
                 <div class="site-header__middle">
                 <nav class="nav">
@@ -22,15 +22,24 @@
                     </button>
                     <ul class="nav__wrapper">
                     <li class="nav__item"><a href="/">ホーム</a></li>
-                    <li class="nav__item"><a href="/auction">オークション</a></li>
+                    @if($session == 1)
+                        <li class="nav__item"><a href="/auction">オークション</a></li>
+                    @endif
                     <li class="nav__item"><a href="/carView">車両一覧</a></li>
                     </ul>
                 </nav>
                 </div>
-                <div class="site-header__end">
-                <a class="button" href="/login">ログイン</a>
-                <a class="button" href="/user_register">新規登録</a>
-                </div>
+                @if($session == 1)
+                    <div class="site-header__end">
+                        <a class="button" href="/vehicle_register">車両新規登録</a>
+                        <a class="button" href="/logout">ログアウト</a>
+                    </div>
+                @else
+                    <div class="site-header__end">
+                        <a class="button" href="/login">ログイン</a>
+                        <a class="button" href="/user_register">新規登録</a>
+                    </div>
+                @endif
             </div>
         </header>
         <div class="displayArea">
@@ -51,10 +60,10 @@
                             <p class="carName">{{$vehicle->getVehicleName()}}</p>
                             <a href="/vehicleDetail/{{$vehicle->getId()}}" class="searchMoreLink">この車の詳細情報を見る</a>
                             <div class="carViewAbout">
-                                <p class="carViewAboutMargin">車両年式：{{$vehicle->getModelYear()}}</p>
-                                <p class="carViewAboutMargin">走行距離：{{$vehicle->getMileage()}}</p>
-                                <p class="carViewAboutMargin">排気量：{{$vehicle->getEngineDisplacement()}}</p>
-                                <p class="carViewAboutMargin">燃料区分：{{$vehicle->getFuel()}}</p>
+                                <p class="carViewAboutMargin">車両年式：{{$vehicle->getModelYear()}}年</p>
+                                <p class="carViewAboutMargin">走行距離：{{$vehicle->getMileage()}}万Km</p>
+                                <p class="carViewAboutMargin">排気量：{{$vehicle->getEngineDisplacement()}}cc</p>
+                                <p class="carViewAboutMargin">燃料区分：@if($vehicle->getFuel() == 0) ガソリン @elseif($vehicle->getFuel() == 1) ハイオク @else 軽油 @endif</p>
                                 <p class="carViewAboutMargin">車両メーカー：{{$vehicle->getMaker()}}</p>
                             </div>
                         </div>
@@ -75,7 +84,13 @@
             </div>
             <ul class="nav">
                 <li><a href="/">ホーム</a></li>
-                <li><a href="/auction">オークション</a></li>
+                @if($session == 1)
+                    <li><a href="/auction">オークション</a></li>
+                    <li><a href="/vehicle_register">車両新規登録</a></li>
+                @else
+                    <li><a href="/user_register">新規会員登録</a></li>
+                    <li><a href="/login">ログイン</a></li>
+                @endif
                 <li><a href="/carView">車両一覧</a></li>
                 <li><a href="">利用規約</a></li>
                 <li><a href="">コンタクト</a></li>
