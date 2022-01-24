@@ -29,7 +29,7 @@
 
     <div id="loginForm">
       <div id="logo">
-        <div style="color: black;">ロゴ</div>
+        <img src="{{ asset('images/logo.png')}}" class="logo">
       </div>
 
       <fieldset>
