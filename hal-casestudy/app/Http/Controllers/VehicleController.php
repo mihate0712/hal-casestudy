@@ -15,7 +15,7 @@ class VehicleController extends Controller {
         $templatePath = "index";
         $db = DB::connection()->getPdo();
         $vehicleDAO = new VehicleDAO($db);
-        $carList = $vehicleDAO->findAll();
+        $carList = $vehicleDAO->findAll2();
         $assign["carList"] = $carList;
         return view($templatePath, $assign);
     }
