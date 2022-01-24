@@ -3,6 +3,7 @@ namespace App\DAO;
 
 use PDO;
 use App\Entity\Vehicle;
+use App\Entity\Option;
 use Illuminate\Http\Request;
 
 class VehicleDAO {
@@ -169,6 +170,7 @@ class VehicleDAO {
             $remarks = $row["remarks"];
             $auctionJoin = $row["auction_join"];
             $imagePass = $row["image_pass"];
+            $carId = $row["car_id"];
 
             $vehicle = new Vehicle();
             $vehicle->setId($id);
@@ -196,9 +198,29 @@ class VehicleDAO {
             $vehicle->setRemarks($remarks);
             $vehicle->setAuctionJoin($auctionJoin);
             $vehicle->setImagePass($imagePass);
+            $vehicle->setCarId($carId);
         }
         return $vehicle;
     }
+
+    // IDによるオプション情報取得
+    public function findByOption(int $id): ?Option{
+        $sql = "SELECT * FROM options  WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        $vehicle = null;
+        if($result && $row = $stmt->fetch()){
+            $id = $row["id"];
+            $optionName = $row["option_name"];
+
+            $option = new Option();
+            $option->setId($id);
+            $option->setOptionName($optionName);
+        }
+        return $option;
+    }
+
 
     // オプション登録
     public function insert2($id, $option) {
@@ -221,7 +243,7 @@ class VehicleDAO {
     }
 
     /**
-     * 全車両検索
+     * 車両情報取得（4件だけ）
      */
     public function findAll2(): array{
         $sql = "SELECT * FROM vehicles Limit 4";

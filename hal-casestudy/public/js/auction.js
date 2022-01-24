@@ -1,4 +1,3 @@
-
 // 時間管理のタイマー処理部分
 document.addEventListener('DOMContentLoaded', function() {
     var Timer = function(saleStartTime, saleEndTime, endMessage, outputDestination) {
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     }
-    
+        
     var myTimer = new Timer('2022/1/21 03:05:00', '2022/01/21 4:30:00', 'オークション終了', 'timer');
     myTimer.countDown();
   }, false)
