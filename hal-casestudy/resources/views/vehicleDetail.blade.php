@@ -52,15 +52,15 @@
                 <table class="carDetail">
                     <tr>
                         <th class="th">車両年式</th>
-                        <td class="td">{{$vehicle->getModelYear()}}</td>
+                        <td class="td">{{$vehicle->getModelYear()}}年</td>
                     </tr>
                     <tr>
                         <th class="th">走行距離</th>
-                        <td class="td">{{$vehicle->getMileage()}}</td>
+                        <td class="td">{{$vehicle->getMileage()}}万Km</td>
                     </tr>
                     <tr>
                         <th class="th">排気量</th>
-                        <td class="td">{{$vehicle->getEngineDisplacement()}}</td>
+                        <td class="td">{{$vehicle->getEngineDisplacement()}}cc</td>
                     </tr>
                     <tr>
                         <th class="th">次回車検日</th>
