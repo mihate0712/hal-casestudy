@@ -40,7 +40,7 @@
         </form>
       </fieldset>
       <div class="newLink">
-        <a href="/user_register" class="new">新規登録はこちら</a>
+        <a href="/user_register" class="new">新規登録はこちら</a><br>
         <a href="/" class="back">TOPページに戻る</a>
       </div>
     </div>

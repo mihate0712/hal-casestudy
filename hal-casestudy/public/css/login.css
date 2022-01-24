@@ -121,6 +121,7 @@ input[type="submit"]:hover{
 
 .newLink{
   margin: 50px 0;
+  line-height: 50px;
 }
 .new{
   margin: 100px auto;
