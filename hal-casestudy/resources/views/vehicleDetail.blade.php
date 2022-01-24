@@ -21,15 +21,15 @@
                 menu
                 </button>
                 <ul class="nav__wrapper">
-                <li class="nav__item"><a href="#">ホーム</a></li>
-                <li class="nav__item"><a href="#">オークション</a></li>
-                <li class="nav__item"><a href="#">車両一覧</a></li>
+                <li class="nav__item"><a href="/">ホーム</a></li>
+                <li class="nav__item"><a href="/auction">オークション</a></li>
+                <li class="nav__item"><a href="/carView">車両一覧</a></li>
                 </ul>
             </nav>
             </div>
             <div class="site-header__end">
-            <a class="button" href="#">ログイン</a>
-            <a class="button" href="#">新規登録</a>
+            <a class="button" href="/login">ログイン</a>
+            <a class="button" href="/user_register">新規登録</a>
             </div>
         </div>
         </header>
@@ -134,9 +134,9 @@
                 </a>
             </div>
             <ul class="nav">
-                <li><a href="">ホーム</a></li>
-                <li><a href="">オークション</a></li>
-                <li><a href="">車両一覧</a></li>
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/auction">オークション</a></li>
+                <li><a href="/carView">車両一覧</a></li>
                 <li><a href="">利用規約</a></li>
                 <li><a href="">コンタクト</a></li>
             </ul>

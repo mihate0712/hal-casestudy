@@ -11,27 +11,27 @@
     </head>
     <body>
         <header class="site-header">
-        <div class="wrapper site-header__wrapper">
-            <div class="site-header__start">
-            <a href="#" class="brand">Brand</a>
+            <div class="wrapper site-header__wrapper">
+                <div class="site-header__start">
+                <a href="#" class="brand">Brand</a>
+                </div>
+                <div class="site-header__middle">
+                <nav class="nav">
+                    <button class="nav__toggle" aria-expanded="false" type="button">
+                    menu
+                    </button>
+                    <ul class="nav__wrapper">
+                    <li class="nav__item"><a href="/">ホーム</a></li>
+                    <li class="nav__item"><a href="/auction">オークション</a></li>
+                    <li class="nav__item"><a href="/carView">車両一覧</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="site-header__end">
+                <a class="button" href="/login">ログイン</a>
+                <a class="button" href="/user_register">新規登録</a>
+                </div>
             </div>
-            <div class="site-header__middle">
-            <nav class="nav">
-                <button class="nav__toggle" aria-expanded="false" type="button">
-                menu
-                </button>
-                <ul class="nav__wrapper">
-                <li class="nav__item"><a href="#">ホーム</a></li>
-                <li class="nav__item"><a href="#">オークション</a></li>
-                <li class="nav__item"><a href="#">車両一覧</a></li>
-                </ul>
-            </nav>
-            </div>
-            <div class="site-header__end">
-            <a class="button" href="#">ログイン</a>
-            <a class="button" href="#">新規登録</a>
-            </div>
-        </div>
         </header>
         <div class="displayArea">
             <h1 class="pageTitle">登録車両一覧</h1>
@@ -74,9 +74,9 @@
                 </a>
             </div>
             <ul class="nav">
-                <li><a href="">ホーム</a></li>
-                <li><a href="">オークション</a></li>
-                <li><a href="">車両一覧</a></li>
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/auction">オークション</a></li>
+                <li><a href="/carView">車両一覧</a></li>
                 <li><a href="">利用規約</a></li>
                 <li><a href="">コンタクト</a></li>
             </ul>
