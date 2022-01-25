@@ -24,7 +24,7 @@ img {
     margin: 0 auto;
 }
 #right {
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 30%;
     margin: 0 auto;
 }
@@ -36,7 +36,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: sandybrown;
+    /* background-color: sandybrown; */
     margin: 50px auto;
     font-size: 20px;
     width: 100%;

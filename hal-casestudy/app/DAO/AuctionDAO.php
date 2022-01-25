@@ -55,7 +55,7 @@ class AuctionDAO{
             $soldPrice = $row["sold_price"];
             $auctionStatus = $row["auction_status"];
             $userId = $row["user_id"];
-            $vehicle_id = $row["vehicle_id"];
+            $vehicleId = $row["vehicle_id"];
             $deliverCarStatus = $row["deliver_car_status"];
             $payment = $row["payment"];
             $startDate = $row["start_date"];
@@ -64,7 +64,7 @@ class AuctionDAO{
             $paymentDate = $row["payment_date"];
             $auction = new Auction();
             $auction->setId($id);
-            $auction->setCurrentPrices($currentPrices);
+            $auction->setCurrentPrice($currentPrices);
             $auction->setSoldPrice($soldPrice);
             $auction->setAuctionStatus($auctionStatus);
             $auction->setUserId($userId);
@@ -93,7 +93,7 @@ class AuctionDAO{
             $soldPrice = $row["sold_price"];
             $auctionStatus = $row["auction_status"];
             $userId = $row["user_id"];
-            $vehicle_id = $row["vehicle_id"];
+            $vehicleId = $row["vehicle_id"];
             $deliverCarStatus = $row["deliver_car_status"];
             $payment = $row["payment"];
             $startDate = $row["start_date"];
@@ -102,7 +102,7 @@ class AuctionDAO{
             $paymentDate = $row["payment_date"];
             $auction = new Auction();
             $auction->setId($id);
-            $auction->setCurrentPrices($currentPrices);
+            $auction->setCurrentPrice($currentPrices);
             $auction->setSoldPrice($soldPrice);
             $auction->setAuctionStatus($auctionStatus);
             $auction->setUserId($userId);
@@ -129,7 +129,7 @@ class AuctionDAO{
             $soldPrice = $row["sold_price"];
             $auctionStatus = $row["auction_status"];
             $userId = $row["user_id"];
-            $vehicle_id = $row["vehicle_id"];
+            $vehicleId = $row["vehicle_id"];
             $deliverCarStatus = $row["deliver_car_status"];
             $payment = $row["payment"];
             $startDate = $row["start_date"];
@@ -138,7 +138,7 @@ class AuctionDAO{
             $paymentDate = $row["payment_date"];
             $auction = new Auction();
             $auction->setId($id);
-            $auction->setCurrentPrices($currentPrices);
+            $auction->setCurrentPrice($currentPrices);
             $auction->setSoldPrice($soldPrice);
             $auction->setAuctionStatus($auctionStatus);
             $auction->setUserId($userId);

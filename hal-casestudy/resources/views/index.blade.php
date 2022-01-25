@@ -56,69 +56,11 @@
         </div>
         @endforeach
     </div>
-    <h2>人気車両ランキング</h2>
-    <div class="flex">
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>人気No1</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>人気No2</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>人気No3</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>人気No4</p>
-            </a>
-        </div>
-    </div>
     <h2>今週開催のオークション</h2>
     <div class="content2">
-        <a href="/">
+        <a href="/auction/1">
             <img id="ork" src="{{ asset('images/sub.jpg')}}">
         </a>
-    </div>
-    <h2>今後開催予定のオークション</h2>
-    <div class="flex">
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>1月15日開催予定</p>
-                <p>車種名</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>1月15日開催予定</p>
-                <p>車種名</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>1月15日開催予定</p>
-                <p>車種名</p>
-            </a>
-        </div>
-        <div class="content">
-            <a href="/">
-                <img src="{{ asset('images/sub.jpg')}}">
-                <p>1月15日開催予定</p>
-                <p>車種名</p>
-            </a>
-        </div>
     </div>
     <footer id="footer01" class="footer outer-block">
       <div class="logo">

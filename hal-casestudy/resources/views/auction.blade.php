@@ -1,7 +1,3 @@
-<?php
-    $price = 100000;
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -27,24 +23,15 @@
               </button>
               <ul class="nav__wrapper">
               <li class="nav__item"><a href="/">ホーム</a></li>
-              @if($session == 1)
-                <li class="nav__item"><a href="/auction">オークション</a></li>
-              @endif
+              <li class="nav__item"><a href="/auction">オークション</a></li>
               <li class="nav__item"><a href="/carView">車両一覧</a></li>
               </ul>
           </nav>
           </div>
-          @if($session == 1)
             <div class="site-header__end">
                 <a class="button" href="/vehicle_register">車両新規登録</a>
                 <a class="button" href="/logout">ログアウト</a>
             </div>
-          @else
-            <div class="site-header__end">
-                <a class="button" href="/login">ログイン</a>
-                <a class="button" href="/user_register">新規登録</a>
-            </div>
-          @endif
       </div>
     </header>
     <h1>オークション画面</h1>
@@ -57,7 +44,7 @@
         </div>
         <div id="right">
             <div class="timer" id="timer"></div>
-            <div id="price_text">現在の価格: <p id="price">{{$price}}</p>円</div>
+            <div id="price_text">現在の価格: <p id="price">{{$vehicle->getBuyingPrice() ."0000"}}円</p></div>
             <button class="button2" type="button" onclick="onClick();">入札</button>
         </div>
     </div>
@@ -77,7 +64,7 @@
                     <th>走行</th>
                     <td>{{ $vehicle->getMileage() }}km</td>
                     <th>車の種類</th>
-                    <td>{{ $vehicle->getCarTypeId() }}</td>
+                    <td>{{ $vehicle->getCarModel() }}</td>
                 </tr>
                 <tr>
                     <th>排気量</th>
@@ -95,7 +82,15 @@
                     <th>外装色</th>
                     <td>{{ $vehicle->getExteriorColor() }}</td>
                     <th>燃料</th>
-                    <td>{{ $vehicle->getFuel() }}</td>
+                    <td>
+                        @if($vehicle->getFuel() == 0)
+                            ガソリン
+                        @elseif($vehicle->getFuel() == 1)
+                            ハイオク
+                        @else
+                            軽油
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>内装色</th>
@@ -187,13 +182,8 @@
       </div>
       <ul class="nav">
         <li><a href="/">ホーム</a></li>
-        @if($session == 1)
-            <li><a href="/auction">オークション</a></li>
-            <li><a href="/vehicle_register">車両新規登録</a></li>
-        @else
-            <li><a href="/user_register">新規会員登録</a></li>
-            <li><a href="/login">ログイン</a></li>
-        @endif
+        <li><a href="/auction">オークション</a></li>
+        <li><a href="/vehicle_register">車両新規登録</a></li>
         <li><a href="/carView">車両一覧</a></li>
         <li><a href="">利用規約</a></li>
         <li><a href="">コンタクト</a></li>
@@ -202,6 +192,10 @@
         MASARU MOTOR © HAL Inc.
       </p>
     </footer>
+
+    <?php
+        var_dump($auction);
+    ?>
     <script src="{{ asset('/js/auction.js') }}"></script>
 </body>
 </html>
