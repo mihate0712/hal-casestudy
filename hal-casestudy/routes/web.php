@@ -32,10 +32,7 @@ Route::get("/carViewSearch", [VehicleController::class, "carViewSearch"]);
 
 Route::get("/vehicleDetail/{id}", [VehicleController::class, "vehicleDetail"]);
 
-Route::get('/auction', function () {
-    $assign["session"] = 0;
-    return view('auction', $assign);
-});
+Route::get('/auction/{id}', [AuctionController::class, "showAuction"]);
 
 Route::get("/user_register", [UserController::class, "go_user_register"]);
 Route::post("/user_register", [UserController::class, "user_register"]);

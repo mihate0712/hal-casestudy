@@ -49,16 +49,16 @@
     </header>
     <h1>オークション画面</h1>
     <div id="nav">
-        <p>車両名 トヨタプリウス（型式 DAA-ZVW51）
+        <p>車両名 {{ $vehicle->getVehicleName() }} </p>
     </div>
     <div id="main">
         <div id="left">
-            <img src="{{ asset('images/auction.jpg')}}">
+            <img src="{{ asset('storage/images/'.$vehicle->getImagePass()) }}">
         </div>
         <div id="right">
             <div class="timer" id="timer"></div>
             <div id="price_text">現在の価格: <p id="price">{{$price}}</p>円</div>
-            <button class="button" type="button" onclick="onClick();">入札</button>
+            <button class="button2" type="button" onclick="onClick();">入札</button>
         </div>
     </div>
     <div id="spec">
@@ -69,39 +69,39 @@
             <tbody>
                 <tr>
                     <th>年式</th>
-                    <td>2020年</td>
-                    <th>駆動方式</th>
-                    <td>2WD</td>
+                    <td>{{ $vehicle->getModelYear() }}年</td>
+                    <th>カラーNo</th>
+                    <td>{{ $vehicle->getColorCode() }}</td>
                 </tr>
                 <tr>
                     <th>走行</th>
-                    <td>0.8万km</td>
-                    <th>ボディタイプ</th>
-                    <td>セダン</td>
+                    <td>{{ $vehicle->getMileage() }}km</td>
+                    <th>車の種類</th>
+                    <td>{{ $vehicle->getCarTypeId() }}</td>
                 </tr>
                 <tr>
                     <th>排気量</th>
-                    <td>1800cc</td>
-                    <th>ミッション</th>
-                    <td>AT</td>
+                    <td>{{ $vehicle->getEngineDisplacement() }}cc</td>
+                    <th>車体番号</th>
+                    <td>{{ $vehicle->getVehicleIdentificationNumber() }}</td>
                 </tr>
                 <tr>
-                    <th>車検</th>
-                    <td>2023年4月</td>
-                    <th>色</th>
-                    <td>シルバー</td>
+                    <th>車検日</th>
+                    <td>{{ $vehicle->getInspectionDate() }}</td>
+                    <th>評価点</th>
+                    <td>{{ $vehicle->getScore() }}</td>
                 </tr>
                 <tr>
-                    <th>乗車定員</th>
-                    <td>5</td>
-                    <th>ハンドル</th>
-                    <td>右</td>
-                </tr>
-                <tr>
+                    <th>外装色</th>
+                    <td>{{ $vehicle->getExteriorColor() }}</td>
                     <th>燃料</th>
-                    <td>ガソリン</td>
+                    <td>{{ $vehicle->getFuel() }}</td>
+                </tr>
+                <tr>
+                    <th>内装色</th>
+                    <td>{{ $vehicle->getInteriorColor() }}</td>
                     <th>型式</th>
-                    <td>DAA-ZVW51</td>
+                    <td>{{ $vehicle->getCarId() }}</td>
                 </tr>
             </tbody>
         </table>
@@ -112,31 +112,67 @@
             <tbody>
                 <tr>
                     <th>PS（パワー捨て）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'PS') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                     <th>PW（パワーウインド）</th>
-                    <td>〇</td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'PW') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>AW（サンルーフ）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'AW') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                     <th>背面タイヤ</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), '背面タイヤ') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>カワ（本革シート）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'カワ') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                     <th>AB（エアーバック）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'AB') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>TV（テレビ）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'TV') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                     <th>ナビ（カーナビ）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'ナビ') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>Rスポ（リヤースボイラ）</th>
-                    <td></td>
+                    <td>
+                        @if(strpos($option->getOptionName(), 'Rスポ') !== false)
+                            <p>〇</p>
+                        @endif
+                    </td>
                     <th></th>
                     <td></td>
                 </tr>

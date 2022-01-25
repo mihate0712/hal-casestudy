@@ -63,4 +63,25 @@ class AuctionController extends Controller{
         $response = view($templatePath, $assign);
         return $response;
     }
+
+    /**
+     * オークション画面表示処理。
+     */
+    public function showAuction(Request $request, int $id){
+        $templatePath = "auction";
+        $assign = [];
+        $db = DB::connection()->getPdo();
+        $vehicle = new Vehicle();
+        $vehicleDAO = new VehicleDAO($db);
+        $vehicle = $vehicleDAO->findById($id);
+        $option = $vehicleDAO->findByOption($id);
+        $auction = new Auction();
+        $auctionDAO = new AuctionDAO($db);
+        $auction = $auctionDAO->findByVehicleId($id);
+
+        $assign["auction"] = $auction;
+        $assign["vehicle"] = $vehicle;
+        $assign["option"] = $option;
+        return view($templatePath, $assign);
+    }
 }

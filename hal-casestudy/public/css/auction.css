@@ -1,14 +1,6 @@
 * {
     margin: 0 auto;
 }
-header {
-    height: 100px;
-    background-color: aqua;
-}
-footer {
-    height: 100px;
-    background-color: aqua;
-}
 h1 {
     display: none;
 }
@@ -27,7 +19,7 @@ img {
     width: 100%;
 }
 #left {
-    background-color: red;
+    /* background-color: red; */
     width: 50%;
     margin: 0 auto;
 }
@@ -49,9 +41,9 @@ img {
     font-size: 20px;
     width: 100%;
 }
-#button {
-    text-align: center;
-}
+.button2 {
+  display:block;
+  margin: 0 auto;}
 
 /* テーブル部分 */
 body {
