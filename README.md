@@ -1,7 +1,7 @@
 # hal-motors
 ## 自動車オークションサイト
 <dl>
-    <dt>注意事項</dt>
-    <dd>CSS・images・JavaScriptフォルダはpublic内にあります。<br>ページごとにファイルを分けて作成してね<br>
-    ex)TOPページのCSS：index.cssなど</dd>
+    <dt>概要</dt>
+    <dd>自動車のオークションサイト。<br>
+    現在管理している自動車のデータ管理や、オークション機能の実行などができます。</dd>
 </dl>
